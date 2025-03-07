@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqmh35d0xjxjs"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/plattfroms/wind_stop/wind_stop_box/wind_stop_box.gd" id="1_pakgk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkry4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ykuhw"]
+material = SubResource("StandardMaterial3D_tkry4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv8mx"]
+albedo_color = Color(0.254902, 0.321569, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pec7w"]
+material = SubResource("StandardMaterial3D_rv8mx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhwk8"]
+size = Vector3(3.20871, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tq8k5"]
+size = Vector3(3.72235, 0.899658, 1)
+
+[node name="WindStopBox" type="CharacterBody3D" node_paths=PackedStringArray("freeze_timer")]
+script = ExtResource("1_pakgk")
+speed = 10.0
+freeze_timer = NodePath("FreezeTimer")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.16118, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ykuhw")
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.16118, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_pec7w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00636292, 0, 0)
+shape = SubResource("BoxShape3D_hhwk8")
+
+[node name="BottomLeft" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62566, -0.568912, 0)
+
+[node name="TopRight" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60535, 0.524699, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00851429, -0.00793457, 0)
+shape = SubResource("BoxShape3D_tq8k5")
+
+[node name="FreezeTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area3D" to="." method="player_entered"]
+[connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]

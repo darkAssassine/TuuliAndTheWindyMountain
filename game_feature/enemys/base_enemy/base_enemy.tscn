@@ -1,0 +1,169 @@
+[gd_scene load_steps=18 format=3 uid="uid://b2t4q8o81gurc"]
+
+[ext_resource type="Script" path="res://game_feature/enemys/base_enemy/base_enemy.gd" id="1_mrtbm"]
+[ext_resource type="Texture2D" uid="uid://dqhm0wl7fws46" path="res://game_feature/enemys/base_enemy/base_enemy.png" id="2_7ge2v"]
+[ext_resource type="Texture2D" uid="uid://bu80r13c5crdw" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-1.png" id="3_5s2nw"]
+[ext_resource type="Texture2D" uid="uid://cwumqyyixhg2x" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-2.png" id="4_crydb"]
+[ext_resource type="Texture2D" uid="uid://7jq6waufcidy" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-3.png" id="5_5th2w"]
+[ext_resource type="Texture2D" uid="uid://dg0em4dhgywh6" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-4.png" id="6_cwnaj"]
+[ext_resource type="Texture2D" uid="uid://c5b5vlcmrxpxl" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-5.png" id="7_p7xxr"]
+[ext_resource type="Texture2D" uid="uid://ce1h63fac5bg5" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-6.png" id="8_pkr6n"]
+[ext_resource type="Texture2D" uid="uid://b70vbyn1h8mck" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-7.png" id="9_lnf63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bs0v"]
+size = Vector3(1.06048, 1.35715, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqjml"]
+size = Vector3(1.23834, 1.63257, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0m47"]
+size = Vector3(0.206863, 1.36586, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82851"]
+size = Vector3(0.205353, 1.41721, 1)
+
+[sub_resource type="Animation" id="Animation_o0nyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"freeze"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bhlt1"]
+resource_name = "freeze"
+length = 0.6
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"freeze"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.109359, 0.216674, 0.29791, 0.357696, 0.419525, 0.484418),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gcmj"]
+_data = {
+"RESET": SubResource("Animation_o0nyn"),
+"freeze": SubResource("Animation_bhlt1")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmwml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5s2nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_crydb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5th2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cwnaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p7xxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pkr6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lnf63")
+}],
+"loop": true,
+"name": &"freeze",
+"speed": 5.0
+}]
+
+[node name="BaseEnemy" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_mrtbm")
+speed = 5.0
+normal_color = Color(1, 1, 1, 1)
+freeze_color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00831084, -0.144005, 0)
+shape = SubResource("BoxShape3D_4bs0v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.001
+texture = ExtResource("2_7ge2v")
+
+[node name="FreezeTimer" type="Timer" parent="."]
+
+[node name="HitBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014061, -0.000417069, 0)
+shape = SubResource("BoxShape3D_bqjml")
+
+[node name="Left" type="Area3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.846764, -0.00409698, 0)
+shape = SubResource("BoxShape3D_j0m47")
+
+[node name="Right" type="Area3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.771286, 0.0432281, 0)
+shape = SubResource("BoxShape3D_82851")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3gcmj")
+}
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.194543)
+pixel_size = 0.0015
+sprite_frames = SubResource("SpriteFrames_kmwml")
+animation = &"freeze"
+
+[connection signal="timeout" from="FreezeTimer" to="." method="freeze_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="player_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="player_exited"]
+[connection signal="body_entered" from="Left" to="." method="set_direction_to_positiv"]
+[connection signal="body_entered" from="Right" to="." method="set_direction_to_negativ"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7b03ks0rd1el"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/plattfroms/moving_platform/moving_platform.gd" id="1_mlrqm"]
+[ext_resource type="Script" path="res://game_feature/area3d/plattfroms/wind_stop/movin_wind_stop_box/MovingWindStopBox.gd" id="2_2ffoc"]
+[ext_resource type="MeshLibrary" uid="uid://b1cklfy36kqwy" path="res://enviroment/grid_library/Tileset Ugly with coll.tres" id="3_u6dv3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhwk8"]
+size = Vector3(4.01812, 0.977417, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4pxt"]
+size = Vector3(4.00297, 1.26843, 1)
+
+[node name="MovingWindStopBox" type="PathFollow3D"]
+rotation_mode = 0
+script = ExtResource("1_mlrqm")
+
+[node name="WindStopBox" type="CharacterBody3D" parent="."]
+script = ExtResource("2_2ffoc")
+
+[node name="GridMap" type="GridMap" parent="WindStopBox"]
+mesh_library = ExtResource("3_u6dv3")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65534, 0, 458760, 65535, 0, 458760, 0, 0, 458760, 1, 0, 458760)
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindStopBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00459665, 0.487175, 0.506242)
+shape = SubResource("BoxShape3D_hhwk8")
+
+[node name="BottomLeft" type="Marker3D" parent="WindStopBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51052, -0.109871, 0.563955)
+
+[node name="TopRight" type="Marker3D" parent="WindStopBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24527, 1.06919, 0.161783)
+
+[node name="Area3D" type="Area3D" parent="WindStopBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573993, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindStopBox/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00271724, 0.0599968, 0.500012)
+shape = SubResource("BoxShape3D_p4pxt")
+
+[node name="FreezeTimer" type="Timer" parent="WindStopBox"]
+one_shot = true
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057312, 0.516602, 0.436768)
+size = Vector3(3.88049, 0.966797, 1.12646)
+
+[connection signal="body_entered" from="WindStopBox/Area3D" to="." method="player_entered"]
+[connection signal="body_exited" from="WindStopBox/Area3D" to="." method="player_exited"]
+[connection signal="timeout" from="WindStopBox/FreezeTimer" to="WindStopBox" method="_on_freeze_timer_timeout"]

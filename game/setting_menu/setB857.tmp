@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk52uukyhw551"]
+
+[ext_resource type="Script" path="res://game/setting_menu/setting_menu.gd" id="1_at2q3"]
+[ext_resource type="PackedScene" uid="uid://cqbxawknykccv" path="res://game/setting_menu/volume_slider.tscn" id="1_b7bss"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_at2q3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.411765, 0.623529, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -146.0
+offset_right = 133.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer"]
+z_index = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" parent="VBoxContainer" instance=ExtResource("1_b7bss")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+z_index = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Music
+"
+horizontal_alignment = 1
+
+[node name="VolumeSlider2" parent="VBoxContainer" instance=ExtResource("1_b7bss")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="sfxLabel" type="Label" parent="VBoxContainer"]
+z_index = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "sfx
+"
+horizontal_alignment = 1
+
+[node name="VolumeSlider3" parent="VBoxContainer" instance=ExtResource("1_b7bss")]
+layout_mode = 2
+bus_name = "sfx"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -303.0
+offset_right = 57.0
+offset_bottom = -226.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+
+[connection signal="button_up" from="Quit" to="." method="_on_quit_button_up"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgmdlh3kgt838"]
+
+[ext_resource type="PackedScene" uid="uid://d0emlivs5jmy5" path="res://enviroment/probs/totes zeug/Laterne.glb" id="1_3783y"]
+
+[node name="Lampe einzeln" type="Node3D"]
+
+[node name="Laterne" parent="." instance=ExtResource("1_3783y")]

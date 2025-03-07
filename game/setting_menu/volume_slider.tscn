@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqbxawknykccv"]
+
+[ext_resource type="Script" path="res://game/setting_menu/volume_slider.gd" id="1_7jwr3"]
+
+[node name="VolumeSlider" type="HSlider"]
+offset_right = 16.0
+offset_bottom = 8.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_7jwr3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

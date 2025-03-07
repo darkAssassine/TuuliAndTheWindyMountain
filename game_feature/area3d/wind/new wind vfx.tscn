@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckrjij453fsyn"]
+
+[ext_resource type="ArrayMesh" uid="uid://cc468j50034u7" path="res://game_feature/area3d/wind/particle_system_test/snowflake.obj" id="1_rfi76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwmke"]
+render_priority = 1
+transparency = 4
+blend_mode = 1
+albedo_color = Color(0.729412, 0.729412, 0.729412, 1)
+subsurf_scatter_strength = 0.58
+disable_receive_shadows = true
+grow_amount = -1.333
+use_particle_trails = true
+proximity_fade_enabled = true
+proximity_fade_distance = 2.0
+distance_fade_mode = 1
+distance_fade_max_distance = 49.36
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xbv86"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 10, 0)
+linear_accel_min = 29.63
+linear_accel_max = 29.63
+
+[sub_resource type="Curve" id="Curve_iumw8"]
+_data = [Vector2(0.0823529, 0), 0.0, 0.0, 0, 0, Vector2(0.388235, 0.142857), 0.0, 0.0, 0, 0, Vector2(1, 0.164835), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu5fg"]
+render_priority = 1
+transparency = 1
+blend_mode = 3
+albedo_color = Color(0, 0.54902, 0.807843, 1)
+use_particle_trails = true
+distance_fade_mode = 1
+distance_fade_min_distance = 0.3
+distance_fade_max_distance = 5.0
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_xkeq1"]
+material = SubResource("StandardMaterial3D_nu5fg")
+add_uv2 = true
+shape = 0
+size = 0.5
+section_length = 1.05
+curve = SubResource("Curve_iumw8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujssy"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.8
+distance_fade_mode = 1
+distance_fade_max_distance = 24.38
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aubhs"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ie2g"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 10, 0)
+scale_min = 0.0
+scale_max = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Wind" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_jwmke")
+amount = 200
+sub_emitter = NodePath(".")
+lifetime = 2.16
+preprocess = 0.08
+speed_scale = 3.15
+randomness = 0.47
+visibility_aabb = AABB(-4, -9.39549, -4, 8, 18.9297, 8)
+trail_enabled = true
+trail_lifetime = 1.08
+process_material = SubResource("ParticleProcessMaterial_xbv86")
+draw_pass_1 = SubResource("RibbonTrailMesh_xkeq1")
+
+[node name="snowflake" type="GPUParticles3D" parent="Wind"]
+transform = Transform3D(-0.0114491, 0, 0.999934, 0, 1, 0, -0.999934, 0, -0.0114491, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ujssy")
+material_overlay = SubResource("StandardMaterial3D_aubhs")
+amount = 100
+amount_ratio = 0.1359
+sub_emitter = NodePath(".")
+lifetime = 4.69
+speed_scale = 1.9
+randomness = 1.0
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_0ie2g")
+draw_pass_1 = ExtResource("1_rfi76")

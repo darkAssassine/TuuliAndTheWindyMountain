@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://d14w4yiriy8py"]
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_eqq3q"]
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_vygeq"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_8eadf"]
+default_input_values = [0, 0.9, 1, 0.0]
+
+[sub_resource type="VisualShader" id="VisualShader_0eyf3"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+	vec3 n_out2p0;
+// ColorFunc:2
+	vec3 n_in2p0 = vec3(0.00000, 0.00000, 0.00000);
+	{
+		vec3 c = n_in2p0;
+		float max1 = max(c.r, c.g);
+		float max2 = max(max1, c.b);
+		n_out2p0 = vec3(max2, max2, max2);
+	}
+
+
+// FloatOp:4
+	float n_in4p0 = 0.90000;
+	float n_in4p1 = 0.00000;
+	float n_out4p0 = n_in4p0 + n_in4p1;
+
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out4p0;
+
+
+}
+"
+graph_offset = Vector2(-6.53796, 67.1384)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorFunc_eqq3q")
+nodes/fragment/2/position = Vector2(40, 160)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorOp_vygeq")
+nodes/fragment/3/position = Vector2(20, 400)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_8eadf")
+nodes/fragment/4/position = Vector2(120, 260)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 4, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrslk"]
+render_priority = 0
+shader = SubResource("VisualShader_0eyf3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pqjki"]
+material = SubResource("ShaderMaterial_xrslk")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_pqjki")

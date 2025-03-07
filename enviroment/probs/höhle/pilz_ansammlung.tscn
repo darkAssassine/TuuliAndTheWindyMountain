@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwjyq7tio3cjy"]
+
+[ext_resource type="PackedScene" uid="uid://beqqj6n5f54ya" path="res://enviroment/probs/höhle/Pilz braun.glb" id="1_ytcnf"]
+[ext_resource type="PackedScene" uid="uid://b3ccvoeke3gyp" path="res://enviroment/probs/höhle/Pilz_Rot.glb" id="2_7bk50"]
+
+[node name="Pilz" type="Node3D"]
+
+[node name="Pilz braun" parent="." instance=ExtResource("1_ytcnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27311, 0.0795903, -0.559969)
+
+[node name="Pilz braun3" parent="." instance=ExtResource("1_ytcnf")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.238412, -0.0351098, 0.114851)
+
+[node name="Pilz braun4" parent="." instance=ExtResource("1_ytcnf")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.38439, 0.00585008, -0.516819)
+
+[node name="Pilz braun5" parent="." instance=ExtResource("1_ytcnf")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.26319, 0.00585008, 0.37384)
+
+[node name="Pilz braun2" parent="." instance=ExtResource("1_ytcnf")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.834388, -0.0269196, 0.13501)
+
+[node name="Pilz_Rot" parent="." instance=ExtResource("2_7bk50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59831, -0.0263798, -0.17137)
+
+[node name="Pilz_Rot2" parent="." instance=ExtResource("2_7bk50")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15711, -0.0263798, 0.58993)

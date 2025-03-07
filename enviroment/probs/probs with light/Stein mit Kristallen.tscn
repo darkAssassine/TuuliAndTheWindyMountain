@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://df0fk0svdd8tl"]
+
+[ext_resource type="PackedScene" uid="uid://vs2x2nusqsxf" path="res://enviroment/probs/höhle/Kristallstein_2.glb" id="1_vkc0y"]
+
+[node name="Stein mit Kristallen" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Kristallstein_2" parent="." instance=ExtResource("1_vkc0y")]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu018rcrvhpl"
+path="res://.godot/imported/Umbrella theme cut 2.mp3-04068b426d9a603d20a68ac13d621440.mp3str"
+
+[deps]
+
+source_file="res://game_feature/sound/music/Umbrella theme cut 2.mp3"
+dest_files=["res://.godot/imported/Umbrella theme cut 2.mp3-04068b426d9a603d20a68ac13d621440.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

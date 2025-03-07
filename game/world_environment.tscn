@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdiu2rg7p67cd"]
+
+[sub_resource type="Environment" id="Environment_42aui"]
+glow_enabled = true
+glow_levels/2 = 3.35
+glow_strength = 0.62
+glow_hdr_scale = 0.65
+fog_enabled = true
+fog_light_color = Color(0.32549, 0.333333, 0.34902, 1)
+fog_light_energy = 2.88
+fog_density = 0.015
+fog_sky_affect = 0.382
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_42aui")

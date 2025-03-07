@@ -1,0 +1,392 @@
+[gd_scene load_steps=47 format=3 uid="uid://d5pactjjy7jh"]
+
+[ext_resource type="Script" path="res://game_feature/player/bullets/bullet.gd" id="1_p4sk6"]
+[ext_resource type="Texture2D" uid="uid://biotw044oq3lq" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/13.png" id="2_3wu8f"]
+[ext_resource type="Texture2D" uid="uid://xrsify27j6xm" path="res://game_feature/player/bullets/Ice Shot travel/1.png" id="2_uvhrf"]
+[ext_resource type="Texture2D" uid="uid://m1f4o54bsrkk" path="res://game_feature/player/bullets/Ice Shot travel/2.png" id="3_g2s3c"]
+[ext_resource type="Texture2D" uid="uid://diyyx3c7buk71" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/12.png" id="3_ncysp"]
+[ext_resource type="Texture2D" uid="uid://dnlqhil5205if" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/11.png" id="4_8nkr3"]
+[ext_resource type="Texture2D" uid="uid://d0g8wojvpgxp0" path="res://game_feature/player/bullets/Ice Shot travel/3.png" id="4_jve02"]
+[ext_resource type="Texture2D" uid="uid://csr66ax70y20o" path="res://game_feature/player/bullets/Ice Shot travel/4.png" id="5_iuqws"]
+[ext_resource type="Texture2D" uid="uid://q3njlog4o5cj" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/10.png" id="5_sxr3d"]
+[ext_resource type="Texture2D" uid="uid://cpn1n4ceiyifm" path="res://game_feature/player/bullets/Ice Shot travel/5.png" id="6_7olca"]
+[ext_resource type="Texture2D" uid="uid://bre11bjvspo3h" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/9.png" id="6_e1e32"]
+[ext_resource type="Texture2D" uid="uid://bd7mdh053k5ds" path="res://game_feature/player/bullets/Ice Shot travel/6.png" id="7_agj6s"]
+[ext_resource type="Texture2D" uid="uid://ce7mmtx1wh5sn" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/8.png" id="7_fmhhh"]
+[ext_resource type="Texture2D" uid="uid://bjcxet8jb24sv" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/7.png" id="8_rj4mi"]
+[ext_resource type="Texture2D" uid="uid://duvm6yh552e6g" path="res://game_feature/player/bullets/Ice Shot travel/7.png" id="8_ryhkm"]
+[ext_resource type="Texture2D" uid="uid://bdkj50h6mdhi8" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/6.png" id="9_amyih"]
+[ext_resource type="Texture2D" uid="uid://dm8jgch6kk1hx" path="res://game_feature/player/bullets/Ice Shot travel/8.png" id="9_ubyfh"]
+[ext_resource type="Texture2D" uid="uid://bbfty6dp1luki" path="res://game_feature/player/bullets/Ice Shot travel/9.png" id="10_0esju"]
+[ext_resource type="Texture2D" uid="uid://c33qyuujxok5v" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/5.png" id="10_gv75n"]
+[ext_resource type="Texture2D" uid="uid://dcbdkbifkywmq" path="res://game_feature/player/bullets/Ice Shot travel/10.png" id="11_ww3c3"]
+[ext_resource type="Texture2D" uid="uid://dt64elqaoalfn" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/4.png" id="11_xkxmp"]
+[ext_resource type="Texture2D" uid="uid://c0jfwlpj61w2m" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/3.png" id="12_hwfta"]
+[ext_resource type="Texture2D" uid="uid://b12nr83nqhtbs" path="res://game_feature/player/bullets/Ice Shot travel/11.png" id="12_l3t4b"]
+[ext_resource type="Texture2D" uid="uid://ey1qu0r5ve21" path="res://game_feature/player/bullets/Ice Shot travel/12.png" id="13_a87du"]
+[ext_resource type="Texture2D" uid="uid://c377q36w86k76" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/1.png" id="13_vuduf"]
+[ext_resource type="Texture2D" uid="uid://bieluvaxkpx61" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/2.png" id="14_866o4"]
+[ext_resource type="Texture2D" uid="uid://1hruij47dlnd" path="res://game_feature/player/bullets/Ice Shot travel/13.png" id="14_n87ar"]
+[ext_resource type="Texture2D" uid="uid://dxqfr4kqxm3md" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/Empty .png" id="15_j5gi5"]
+[ext_resource type="Texture2D" uid="uid://tgrup32albuh" path="res://game_feature/player/bullets/Ice Shot travel/14.png" id="15_mrn3d"]
+[ext_resource type="Texture2D" uid="uid://b4lamnse74s2i" path="res://game_feature/player/bullets/Ice Shot travel/15.png" id="16_fmccg"]
+[ext_resource type="Texture2D" uid="uid://ct2t4e7t0im85" path="res://game_feature/player/bullets/Ice Shot travel/16.png" id="17_ev1ll"]
+[ext_resource type="Script" path="res://game_feature/player/bullets/bullet_area.gd" id="32_sxgl8"]
+[ext_resource type="AudioStream" uid="uid://dhm012sey3cm2" path="res://game_feature/sound/Player/FOL_SHOOT-IMPACT_SFX.mp3" id="33_13jsm"]
+[ext_resource type="Texture2D" uid="uid://cp6i3ts675cx6" path="res://game_feature/player/bullets/ice splatter/1.png" id="34_nn6u0"]
+[ext_resource type="Texture2D" uid="uid://cl5uvcbmn813l" path="res://game_feature/player/bullets/ice splatter/2.png" id="35_2cemj"]
+[ext_resource type="Texture2D" uid="uid://gw7p6ln5hv0l" path="res://game_feature/player/bullets/ice splatter/3.png" id="36_46nuj"]
+[ext_resource type="Texture2D" uid="uid://w7otpnigykd2" path="res://game_feature/player/bullets/ice splatter/4.png" id="37_masj1"]
+[ext_resource type="Texture2D" uid="uid://b2qs0gj00pef2" path="res://game_feature/player/bullets/ice splatter/5.png" id="38_ktypc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0aiim"]
+size = Vector3(2.30054, 0.452287, 0.211395)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5nsh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4abf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3wu8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ncysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8nkr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sxr3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e1e32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fmhhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rj4mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_amyih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gv75n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xkxmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hwfta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vuduf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_866o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j5gi5")
+}],
+"loop": true,
+"name": &"burst",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uvhrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g2s3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jve02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iuqws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7olca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_agj6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ryhkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ubyfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0esju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ww3c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l3t4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a87du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n87ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mrn3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fmccg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ev1ll")
+}],
+"loop": true,
+"name": &"travel",
+"speed": 40.0
+}]
+
+[sub_resource type="Animation" id="Animation_qtl61"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"travel"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3, 3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.261322, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bua82"]
+resource_name = "burst"
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"burst"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63, 0.7, 0.77, 0.84, 0.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_sound"
+}, {
+"args": [],
+"method": &"bullet"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite3D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0134164),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(3, 3, 3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.261322, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lvk77"]
+resource_name = "travel"
+length = 0.9
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"travel"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u81df"]
+_data = {
+"RESET": SubResource("Animation_qtl61"),
+"burst": SubResource("Animation_bua82"),
+"travel": SubResource("Animation_lvk77")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sin26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_j5gi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_nn6u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2cemj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_46nuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_masj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ktypc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j5gi5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Bullet" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_p4sk6")
+speed = 30.0
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91196, 0, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("32_sxgl8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.592291, -0.0323007, 0.0484607)
+shape = SubResource("BoxShape3D_0aiim")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295295, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_n5nsh")
+disabled = true
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.261322, 0, 0)
+pixel_size = 0.001
+sprite_frames = SubResource("SpriteFrames_x4abf")
+animation = &"travel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u81df")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_13jsm")
+bus = &"sfx"
+
+[node name="DestroyTileAnimation" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0774609, 0, 0)
+pixel_size = 0.017
+sprite_frames = SubResource("SpriteFrames_sin26")
+frame = 6
+frame_progress = 1.0
+
+[connection signal="area_entered" from="Area3D" to="." method="flying_enemy_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="enemy_entered"]

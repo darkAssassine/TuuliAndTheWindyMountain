@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq4kqmxactfnb"]
+
+[ext_resource type="Script" path="res://game_feature/player/VFX/dash_vfx/dash_vfx.gd" id="1_f6xdy"]
+[ext_resource type="Texture2D" uid="uid://cbusisabtldnd" path="res://game_feature/player/player_assets/animations/character.png" id="2_4yjqg"]
+
+[sub_resource type="Animation" id="Animation_6eaqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_22gj0"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"delte_self"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rjde"]
+_data = {
+"RESET": SubResource("Animation_6eaqg"),
+"fade": SubResource("Animation_22gj0")
+}
+
+[node name="DashVFX" type="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.600859, -0.210156)
+script = ExtResource("1_f6xdy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0rjde")
+}
+
+[node name="Ghost" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.529559, -0.0177995)
+pixel_size = 0.0021
+texture = ExtResource("2_4yjqg")

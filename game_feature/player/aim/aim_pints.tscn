@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt2dl1odpp5y5"]
+
+[ext_resource type="Script" path="res://game_feature/player/aim/aim_points.gd" id="1_esych"]
+[ext_resource type="Texture2D" uid="uid://dwhwgw2yqjf6i" path="res://game_feature/player/aim/point.png" id="2_d6a1j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_smuru"]
+
+[node name="aim_points" type="CharacterBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_esych")
+speed = 10.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_d6a1j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_smuru")
+disabled = true

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://uevi8mohvatq"]
+
+[ext_resource type="ArrayMesh" uid="uid://df28bx6gn7qgd" path="res://enviroment/trees/tree/tree.obj" id="1_i0s0o"]
+[ext_resource type="Shader" uid="uid://dkp3d88ltk8vh" path="res://enviroment/trees/tree/tree example.tres" id="1_xwrde"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwo2s"]
+render_priority = 0
+shader = ExtResource("1_xwrde")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3y55"]
+albedo_color = Color(0.0470588, 0.313726, 0.564706, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hvwlk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7mgk"]
+
+[sub_resource type="Environment" id="Environment_oalyu"]
+background_mode = 2
+background_energy_multiplier = 0.0
+ambient_light_color = Color(0.603922, 0.588235, 0.996078, 1)
+ambient_light_sky_contribution = 0.88
+ambient_light_energy = 1.47
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.806724, 0)
+mesh = ExtResource("1_i0s0o")
+surface_material_override/0 = SubResource("ShaderMaterial_cwo2s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(179.824, 0, 0, 0, -16.0541, 179.106, 0, -179.106, -16.0541, 0, 14.8217, 24.0333)
+material_override = SubResource("StandardMaterial3D_h3y55")
+mesh = SubResource("PlaneMesh_hvwlk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(260.106, 0, 0, 0, 260.106, 0, 0, 0, 260.106, -4.53364, -1.12619, -0.462904)
+mesh = SubResource("PlaneMesh_v7mgk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oalyu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5376, 23.2041, -11.1001)
+light_color = Color(0.721569, 0.443137, 0.12549, 1)
+light_energy = 22.58
+omni_range = 55.061
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8661, 11.2485, -12.6683)
+light_color = Color(0.960784, 0.827451, 0.435294, 1)
+light_energy = 30.0
+omni_range = 40.1325

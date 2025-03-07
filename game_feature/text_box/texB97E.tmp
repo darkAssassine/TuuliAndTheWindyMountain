@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1tkdvk8fstrm"]
+
+[ext_resource type="Script" path="res://game_feature/text_box/text_box.gd" id="1_kd85u"]
+[ext_resource type="Texture2D" uid="uid://xcgd0nv51l5g" path="res://game_feature/text_box/fox_assets/foxhead.png" id="1_usr3p"]
+[ext_resource type="FontFile" uid="uid://b5j0mvn8dxgqs" path="res://game/fonts/willow.otf" id="2_npbm3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt2nj"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+
+[node name="TextBox" type="CanvasLayer"]
+layer = 3
+follow_viewport_enabled = true
+script = ExtResource("1_kd85u")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 132.0
+offset_top = 34.0
+offset_right = 1785.0
+offset_bottom = 396.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wt2nj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = -150.0
+offset_bottom = -700.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.345098, 0.345098, 0.345098, 0.835294)
+
+[node name="Label" type="Label" parent="."]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+texture_filter = 1
+offset_left = 198.0
+offset_top = 88.0
+offset_right = 1415.0
+offset_bottom = 364.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_npbm3")
+theme_override_font_sizes/font_size = 50
+text = "Beispieltext: Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße, Scheiße,  Scheiße. 
+
+"
+autowrap_mode = 3
+justification_flags = 131
+clip_text = true
+visible_characters = 203
+visible_ratio = 0.985437
+
+[node name="Foxhead" type="Sprite2D" parent="."]
+position = Vector2(1483, 218)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_usr3p")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1229.0
+offset_top = 292.0
+offset_right = 1315.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("2_npbm3")
+theme_override_font_sizes/font_size = 60
+text = "[E]"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

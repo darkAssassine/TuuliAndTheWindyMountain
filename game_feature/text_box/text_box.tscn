@@ -1,0 +1,197 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1tkdvk8fstrm"]
+
+[ext_resource type="Script" path="res://game_feature/text_box/text_box.gd" id="1_kd85u"]
+[ext_resource type="FontFile" uid="uid://b5j0mvn8dxgqs" path="res://game/fonts/willow.otf" id="2_npbm3"]
+[ext_resource type="Texture2D" uid="uid://btm6plprx0cj7" path="res://game_feature/text_box/fox_text_box.png" id="4_gs4ta"]
+[ext_resource type="AudioStream" uid="uid://c4bd7b0fakx4c" path="res://game_feature/sound/fox_sound/FOL_FOX-TALK_SFX_V3.mp3" id="6_1pwoo"]
+[ext_resource type="Texture2D" uid="uid://cg8xd3h6x6hvx" path="res://game_feature/text_box/BK_progres.png" id="7_3nhwp"]
+[ext_resource type="Texture2D" uid="uid://ipxvltotdgxr" path="res://game_feature/text_box/text_box_BG.png" id="7_dq6yw"]
+[ext_resource type="Texture2D" uid="uid://lxfbowi5yb54" path="res://game_feature/text_box/tuuli_text_box.png" id="8_4x8qk"]
+[ext_resource type="Texture2D" uid="uid://bo6gs64ak4mvw" path="res://game_feature/text_box/out_line.png" id="8_c10be"]
+[ext_resource type="Texture2D" uid="uid://dpajyar5rt0s6" path="res://game_feature/text_box/text_box_frame.png" id="8_xhiix"]
+[ext_resource type="Texture2D" uid="uid://bvigx37cw86tk" path="res://game_feature/text_box/with_fill.png" id="9_mejpg"]
+[ext_resource type="AudioStream" uid="uid://dtofpuatchubo" path="res://game_feature/sound/fox_sound/FOL_TUULI-TALK_SFX_V2.mp3" id="11_xafnl"]
+
+[sub_resource type="Animation" id="Animation_tcjmc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -82)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_6n1jd"]
+resource_name = "move_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -82), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, 998)]
+}
+
+[sub_resource type="Animation" id="Animation_fe3an"]
+resource_name = "move_out"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34bxq"]
+_data = {
+"RESET": SubResource("Animation_tcjmc"),
+"move_in": SubResource("Animation_6n1jd"),
+"move_out": SubResource("Animation_fe3an")
+}
+
+[node name="TextBox" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+follow_viewport_enabled = true
+script = ExtResource("1_kd85u")
+skip_time = 2
+metadata/_edit_vertical_guides_ = [-443.0]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TextBoxBg" type="Sprite2D" parent="."]
+position = Vector2(960, 300)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_dq6yw")
+
+[node name="Foxhead" type="Sprite2D" parent="."]
+position = Vector2(1612, 291)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_gs4ta")
+region_enabled = true
+region_rect = Rect2(1760, 224, 280, 248)
+
+[node name="Tuuli" type="Sprite2D" parent="."]
+position = Vector2(308, 295)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_4x8qk")
+region_enabled = true
+region_rect = Rect2(128, 224, 280, 248)
+
+[node name="TextBoxFrame" type="Sprite2D" parent="."]
+position = Vector2(960, 300)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_xhiix")
+
+[node name="FoxSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1pwoo")
+bus = &"sfx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Tuuli")
+libraries = {
+"": SubResource("AnimationLibrary_34bxq")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = -82.0
+offset_right = 1926.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_top = 1080.0
+offset_right = 1926.0
+offset_bottom = 1162.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 1144.0
+offset_top = 45.0
+offset_right = 3310.0
+offset_bottom = 2093.0
+step = 0.01
+texture_under = ExtResource("7_3nhwp")
+texture_over = ExtResource("8_c10be")
+texture_progress = ExtResource("9_mejpg")
+
+[node name="Label" type="Label" parent="."]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+texture_filter = 1
+offset_left = 440.0
+offset_top = 222.0
+offset_right = 1484.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.937255, 0.933333, 0.976471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_npbm3")
+theme_override_font_sizes/font_size = 40
+text = "I"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 131
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1439.0
+offset_top = 342.0
+offset_right = 1525.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0.937255, 0.933333, 0.976471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_npbm3")
+theme_override_font_sizes/font_size = 45
+text = "[E]"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1291.0
+offset_top = 63.0
+offset_right = 1508.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0.937255, 0.933333, 0.976471, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_npbm3")
+theme_override_font_sizes/font_size = 45
+text = "Skip Dialog"
+
+[node name="TuuliSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xafnl")
+bus = &"sfx"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

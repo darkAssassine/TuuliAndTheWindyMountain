@@ -1,0 +1,780 @@
+[gd_scene load_steps=90 format=3 uid="uid://ve67p8gtq2jo"]
+
+[ext_resource type="Script" path="res://game_feature/enemys/flying_enemy/flying_enemy.gd" id="1_cyk2p"]
+[ext_resource type="PackedScene" uid="uid://c6wh0h1spl2ok" path="res://game_feature/enemys/flying_enemy/flying_bullet.tscn" id="2_x17sa"]
+[ext_resource type="Texture2D" uid="uid://co5j4amls7wxe" path="res://game_feature/enemys/flying_enemy/animations/Propeller/1.png" id="3_7v0ch"]
+[ext_resource type="Texture2D" uid="uid://c0qgs13fxy8f7" path="res://game_feature/enemys/flying_enemy/animations/Propeller/2.png" id="4_8xhbp"]
+[ext_resource type="Texture2D" uid="uid://cxu72pcqceij8" path="res://game_feature/enemys/flying_enemy/animations/Propeller/3.png" id="5_76b2x"]
+[ext_resource type="Texture2D" uid="uid://bu80r13c5crdw" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-1.png" id="5_ikjfh"]
+[ext_resource type="Texture2D" uid="uid://b2qqipg4fnuyv" path="res://game_feature/enemys/flying_enemy/animations/Propeller/4.png" id="6_d63o3"]
+[ext_resource type="Texture2D" uid="uid://cwumqyyixhg2x" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-2.png" id="6_qrsjv"]
+[ext_resource type="Texture2D" uid="uid://7jq6waufcidy" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-3.png" id="7_1vbhh"]
+[ext_resource type="Texture2D" uid="uid://cm43160k0icqo" path="res://game_feature/enemys/flying_enemy/animations/Propeller/5.png" id="7_s8ygn"]
+[ext_resource type="Texture2D" uid="uid://b7wktsx3nemyy" path="res://game_feature/enemys/flying_enemy/animations/Propeller/6.png" id="8_mwhn0"]
+[ext_resource type="Texture2D" uid="uid://dg0em4dhgywh6" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-4.png" id="8_nd5or"]
+[ext_resource type="Texture2D" uid="uid://c5b5vlcmrxpxl" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-5.png" id="9_222kc"]
+[ext_resource type="Texture2D" uid="uid://bnvsy2mc2bx0i" path="res://game_feature/enemys/flying_enemy/animations/Propeller/7.png" id="9_gbq81"]
+[ext_resource type="Texture2D" uid="uid://ce1h63fac5bg5" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-6.png" id="10_22xxo"]
+[ext_resource type="Texture2D" uid="uid://bm6ys8vg42dy8" path="res://game_feature/enemys/flying_enemy/animations/Propeller/8.png" id="10_66pbv"]
+[ext_resource type="Texture2D" uid="uid://bf6hrnm56brab" path="res://game_feature/enemys/flying_enemy/animations/Propeller/9.png" id="11_7tvxp"]
+[ext_resource type="Texture2D" uid="uid://b70vbyn1h8mck" path="res://game_feature/enemys/base_enemy/assets/Freezing VFX/Unbenanntes_Projekt-7.png" id="11_yq4oe"]
+[ext_resource type="Texture2D" uid="uid://cebb3ceypjwwc" path="res://game_feature/enemys/flying_enemy/animations/flying animation/1.png" id="19_2lp48"]
+[ext_resource type="Texture2D" uid="uid://fe7erlqx4p8f" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/1.png" id="19_11u5o"]
+[ext_resource type="Texture2D" uid="uid://bdfmhx5f4rvrt" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/5.png" id="19_kitln"]
+[ext_resource type="Texture2D" uid="uid://dg1dnhtbqb8on" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/2.png" id="20_077jn"]
+[ext_resource type="Texture2D" uid="uid://lv70utc1ousi" path="res://game_feature/enemys/flying_enemy/animations/flying animation/2.png" id="20_b7hch"]
+[ext_resource type="Texture2D" uid="uid://b648vegmy1ihn" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/6.png" id="20_fqj18"]
+[ext_resource type="Texture2D" uid="uid://sojx2gnp7mdi" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/7.png" id="21_7r5pq"]
+[ext_resource type="Texture2D" uid="uid://bc6dxxy6m1xhn" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/3.png" id="21_8auin"]
+[ext_resource type="Texture2D" uid="uid://bceubne3xwvdx" path="res://game_feature/enemys/flying_enemy/animations/flying animation/3.png" id="21_k2boa"]
+[ext_resource type="Texture2D" uid="uid://4087p7aycr0a" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/8.png" id="22_kv4dd"]
+[ext_resource type="Texture2D" uid="uid://c8a04t7i8kmji" path="res://game_feature/enemys/flying_enemy/animations/flying animation/4.png" id="22_m7v52"]
+[ext_resource type="Texture2D" uid="uid://ddvl8ldq8c44e" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/4.png" id="22_ylrhi"]
+[ext_resource type="Texture2D" uid="uid://dq7ece5ixc2e3" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/9.png" id="23_0qybh"]
+[ext_resource type="Texture2D" uid="uid://co6mr8rkibivw" path="res://game_feature/enemys/flying_enemy/animations/flying animation/5.png" id="23_howri"]
+[ext_resource type="Texture2D" uid="uid://r14gnjgukpdd" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/5.png" id="23_ncsq8"]
+[ext_resource type="Texture2D" uid="uid://phqq1mrs2gif" path="res://game_feature/enemys/flying_enemy/animations/flying animation/6.png" id="24_gefsr"]
+[ext_resource type="Texture2D" uid="uid://scj8korhed42" path="res://game_feature/enemys/rolling_enemy/animations/Environmentalenemydeath/10.png" id="24_uw2jk"]
+[ext_resource type="Texture2D" uid="uid://vk7x3n8geuh6" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/6.png" id="24_wkyvq"]
+[ext_resource type="Texture2D" uid="uid://ba3y7nuqgcrbt" path="res://game_feature/enemys/flying_enemy/animations/flying animation/7.png" id="25_5wje1"]
+[ext_resource type="Texture2D" uid="uid://qsr0ma0iu1nx" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/7.png" id="25_dw4j3"]
+[ext_resource type="Texture2D" uid="uid://bu2ur3c4wklp2" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/8.png" id="26_8dp8w"]
+[ext_resource type="Texture2D" uid="uid://b32q6fhcj3vhn" path="res://game_feature/enemys/flying_enemy/animations/flying animation/8.png" id="26_tqqia"]
+[ext_resource type="Texture2D" uid="uid://b2fpb502e0mao" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/9.png" id="27_cd1x5"]
+[ext_resource type="Texture2D" uid="uid://hro0y41656pw" path="res://game_feature/enemys/flying_enemy/animations/flying animation/9.png" id="27_qygce"]
+[ext_resource type="Texture2D" uid="uid://cy1depwqtrbxu" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/10.png" id="28_6hfna"]
+[ext_resource type="Texture2D" uid="uid://isa55d8q6d2c" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/1.png" id="28_y1cmi"]
+[ext_resource type="Texture2D" uid="uid://dm8mtouejco53" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/2.png" id="29_2ynej"]
+[ext_resource type="Texture2D" uid="uid://b52pyhq12dsx2" path="res://game_feature/enemys/flying_enemy/animations/Ice Breaking VFX/11.png" id="29_eyilo"]
+[ext_resource type="Texture2D" uid="uid://14it07g8gu6e" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/3.png" id="30_k7gm1"]
+[ext_resource type="Texture2D" uid="uid://bxjcrarfp4rir" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/4.png" id="31_v5qly"]
+[ext_resource type="Texture2D" uid="uid://dnpunbkncldyn" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/5.png" id="32_bgo3n"]
+[ext_resource type="Texture2D" uid="uid://b313rvjdjenb8" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/6.png" id="33_0ougf"]
+[ext_resource type="Texture2D" uid="uid://bdv7aru8uh710" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/7.png" id="34_g7x31"]
+[ext_resource type="Texture2D" uid="uid://clevelwtknxsn" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/8.png" id="35_yd6tt"]
+[ext_resource type="Texture2D" uid="uid://bverofar33ad5" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/9.png" id="36_yrjst"]
+[ext_resource type="Texture2D" uid="uid://3uuhvr3un4c5" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/10.png" id="37_c3g7n"]
+[ext_resource type="Texture2D" uid="uid://snrnk8g5cout" path="res://game_feature/enemys/flying_enemy/animations/Shooting animation/11.png" id="38_23fk0"]
+[ext_resource type="AudioStream" uid="uid://hx0aap0c24du" path="res://game_feature/sound/enemy_sounds/FOL_ENEMIY-STERBE_SFX.mp3" id="56_ty55d"]
+[ext_resource type="AudioStream" uid="uid://cdax014dencqu" path="res://game_feature/sound/enemy_sounds/FOL_ENTFRIEREN_SFX.mp3" id="57_j31uw"]
+[ext_resource type="AudioStream" uid="uid://ddimsjiwawue8" path="res://game_feature/sound/enemy_sounds/FOL_EINFRIEREN_SFX.mp3" id="58_yt6ji"]
+[ext_resource type="AudioStream" uid="uid://b0r0n50wwk7ds" path="res://game_feature/sound/enemy_sounds/FOL_ENEMIE-ANTISIPATION_SFX.mp3" id="59_3dfh3"]
+[ext_resource type="AudioStream" uid="uid://01gwujmmcfd3" path="res://game_feature/sound/enemy_sounds/FOL_ENEMIE-SHOOT_SFX.mp3" id="60_h5cls"]
+[ext_resource type="AudioStream" uid="uid://j5lnpi7d4s1a" path="res://game_feature/sound/enemy_sounds/FOL_ENEMY-FLYING_SFX.mp3" id="61_k3jt6"]
+
+[sub_resource type="Curve3D" id="Curve3D_jgypx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0184764, 0.555539, 0, 0, 0, 0, 0, 0, 0, 0.0184764, 0.224656, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqjml"]
+size = Vector3(2.27214, 2.51959, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nefh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7v0ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8xhbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76b2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d63o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s8ygn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mwhn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gbq81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_66pbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7tvxp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vc0tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fvh7p"]
+resource_name = "idle_propeller"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sq5ij"]
+_data = {
+"RESET": SubResource("Animation_vc0tt"),
+"idle_propeller": SubResource("Animation_fvh7p")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuxao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ikjfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qrsjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1vbhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nd5or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_222kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_22xxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yq4oe")
+}],
+"loop": false,
+"name": &"freeze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_11u5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_077jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8auin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ylrhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ncsq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wkyvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dw4j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8dp8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cd1x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6hfna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eyilo")
+}],
+"loop": true,
+"name": &"unfreeze",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_o0nyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FreezeSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"freeze"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FreezeSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bhlt1"]
+resource_name = "freeze"
+length = 0.6
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FreezeSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"freeze"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FreezeSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.109359, 0.216674, 0.29791, 0.357696, 0.419525, 0.484418),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_6jeqd"]
+resource_name = "unfreeze"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FreezeSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unfreeze"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FreezeSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unfreeze"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gcmj"]
+_data = {
+"RESET": SubResource("Animation_o0nyn"),
+"freeze": SubResource("Animation_bhlt1"),
+"unfreeze": SubResource("Animation_6jeqd")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tdcqk"]
+load_path = "res://.godot/imported/1.png-6abf28274ee278f4a05cd7baeabd8671.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_500jq"]
+load_path = "res://.godot/imported/2.png-f9374f379e60136d9f9784e71097ae2c.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1lxle"]
+load_path = "res://.godot/imported/3.png-8928e284127ee3d43547a994750efe52.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0ug0"]
+load_path = "res://.godot/imported/4.png-783e58865b6e98e7e58c612846c4a718.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t88fx"]
+load_path = "res://.godot/imported/5.png-15f7ed8cdd9b7a897002800583101c0d.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_326te"]
+load_path = "res://.godot/imported/6.png-936c2b192f71c8c7e7f28d4e981a6097.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rf6hs"]
+load_path = "res://.godot/imported/7.png-64992df21391db9fb79b2a439308a6ce.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kqaku"]
+load_path = "res://.godot/imported/8.png-b7881c3445651aa4b53035687492843b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1frqe"]
+load_path = "res://.godot/imported/9.png-743c90c7fd96e484e7421b6cd6edd7d5.s3tc.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klvhn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_kitln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fqj18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7r5pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kv4dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0qybh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uw2jk")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_2lp48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b7hch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_k2boa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m7v52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_howri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gefsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5wje1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tqqia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qygce")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tdcqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_500jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1lxle")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_u0ug0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_t88fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_326te")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rf6hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_kqaku")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1frqe")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_y1cmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2ynej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_k7gm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_v5qly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bgo3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0ougf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_g7x31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yd6tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yrjst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_c3g7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_23fk0")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_j0mll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gjvtv"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dead"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_dead"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xih1p"]
+resource_name = "idle"
+length = 0.81
+loop_mode = 1
+step = 0.09
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_nrkj7"]
+resource_name = "shoot"
+length = 0.77
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"shoot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/RangedEnemy/FlyingEnemy:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0495724, 0.7509),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"shoot_sound"
+}, {
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_752l6"]
+_data = {
+"RESET": SubResource("Animation_j0mll"),
+"dead": SubResource("Animation_gjvtv"),
+"idle": SubResource("Animation_xih1p"),
+"shoot": SubResource("Animation_nrkj7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bs0v"]
+size = Vector3(1.45587, 1.94405, 1.09375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwots"]
+size = Vector3(16.0835, 18.2302, 1)
+
+[node name="flying_enemy" type="PathFollow3D"]
+process_mode = 1
+rotation_mode = 0
+script = ExtResource("1_cyk2p")
+move_speed = 4.0
+freeze_duration = 5.0
+enemy_bullet = ExtResource("2_x17sa")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_jgypx")
+
+[node name="RangedEnemy" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184764, 0.555539, 0)
+rotation_mode = 0
+
+[node name="HitBox" type="Area3D" parent="Path3D/RangedEnemy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/RangedEnemy/HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062444, -0.134998, -0.0301299)
+shape = SubResource("BoxShape3D_bqjml")
+
+[node name="Bullets" type="Node3D" parent="Path3D/RangedEnemy"]
+top_level = true
+
+[node name="RangeLine" type="RayCast3D" parent="Path3D/RangedEnemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0805673, 0)
+target_position = Vector3(10, 0, 0)
+
+[node name="BulletSpawn" type="Marker3D" parent="Path3D/RangedEnemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601118, -0.552238, 0)
+
+[node name="Cooldown" type="Timer" parent="Path3D/RangedEnemy"]
+one_shot = true
+
+[node name="FreezeTimer" type="Timer" parent="Path3D/RangedEnemy"]
+one_shot = true
+
+[node name="Propeller" type="AnimatedSprite3D" parent="Path3D/RangedEnemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257008, -0.396648, 0)
+sorting_offset = 10.0
+pixel_size = 0.005
+sprite_frames = SubResource("SpriteFrames_nefh4")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/RangedEnemy/Propeller"]
+libraries = {
+"": SubResource("AnimationLibrary_sq5ij")
+}
+
+[node name="FreezeSprite" type="AnimatedSprite3D" parent="Path3D/RangedEnemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0576385, -0.233343, 0.194543)
+sorting_offset = 20.0
+pixel_size = 0.002
+sprite_frames = SubResource("SpriteFrames_wuxao")
+animation = &"freeze"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/RangedEnemy/FreezeSprite"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3gcmj")
+}
+
+[node name="FlyingEnemy" type="AnimatedSprite3D" parent="Path3D/RangedEnemy"]
+pixel_size = 0.004
+sprite_frames = SubResource("SpriteFrames_klvhn")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/RangedEnemy/FlyingEnemy"]
+root_node = NodePath("../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_752l6")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Path3D/RangedEnemy"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/RangedEnemy/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00686191, -0.0818006, -0.0297968)
+shape = SubResource("BoxShape3D_4bs0v")
+
+[node name="RangeArea" type="Area3D" parent="Path3D/RangedEnemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32311, -0.738389, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/RangedEnemy/RangeArea"]
+shape = SubResource("BoxShape3D_hwots")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("56_ty55d")
+volume_db = 4.651
+bus = &"sfx"
+
+[node name="UnfreezeSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("57_j31uw")
+volume_db = 4.651
+bus = &"sfx"
+
+[node name="FreezeSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("58_yt6ji")
+bus = &"sfx"
+
+[node name="ShootAntisipationSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("60_h5cls")
+volume_db = 3.781
+bus = &"sfx"
+
+[node name="ShootSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("59_3dfh3")
+volume_db = 5.656
+bus = &"sfx"
+
+[node name="PropellerSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("61_k3jt6")
+volume_db = 7.209
+unit_size = 3.58
+bus = &"sfx"
+
+[connection signal="area_entered" from="Path3D/RangedEnemy/HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="Path3D/RangedEnemy/HitBox" to="." method="player_entered_hitbox"]
+[connection signal="body_exited" from="Path3D/RangedEnemy/HitBox" to="." method="player_exited_hitbox"]
+[connection signal="timeout" from="Path3D/RangedEnemy/Cooldown" to="." method="on_cooldonw_timeout"]
+[connection signal="timeout" from="Path3D/RangedEnemy/FreezeTimer" to="." method="on_freeze_timer_timeout"]
+[connection signal="body_entered" from="Path3D/RangedEnemy/RangeArea" to="." method="player_entered_range"]
+[connection signal="body_exited" from="Path3D/RangedEnemy/RangeArea" to="." method="player_exited_range"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

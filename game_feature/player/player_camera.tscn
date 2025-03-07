@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btq7lxo8vagsm"]
+
+[ext_resource type="Script" path="res://game_feature/camera/player_cam.gd" id="1_fkfsq"]
+
+[node name="PlayerCamera" type="Camera3D"]
+cull_mask = 1048571
+current = true
+script = ExtResource("1_fkfsq")
+random_shake_strenght = 1.0
+shake_duration = 25.0

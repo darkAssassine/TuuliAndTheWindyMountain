@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://fbnj64ec5qsg"]
+
+[ext_resource type="Texture2D" uid="uid://ba7yhihkkoggx" path="res://textures/plane 2 Side.png" id="1_a5qss"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrd8f"]
+transparency = 1
+albedo_texture = ExtResource("1_a5qss")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q6wx6"]
+material = SubResource("StandardMaterial3D_mrd8f")
+
+[node name="Plane Side" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_q6wx6")

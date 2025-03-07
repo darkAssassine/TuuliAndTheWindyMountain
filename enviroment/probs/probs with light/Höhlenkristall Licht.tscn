@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://doqo42sf56wht"]
+
+[ext_resource type="PackedScene" uid="uid://b1jfaax4qlnog" path="res://enviroment/eiszapfen/Höhlenkristall.glb" id="1_vj803"]
+
+[node name="Höhlenkristall Licht" type="Node3D"]
+
+[node name="Höhlenkristall" parent="." instance=ExtResource("1_vj803")]

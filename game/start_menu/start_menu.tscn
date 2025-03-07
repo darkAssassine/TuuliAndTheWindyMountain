@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://ot3sxf467gag"]
+
+[ext_resource type="Script" path="res://game/start_menu/start_menu.gd" id="1_cmq67"]
+[ext_resource type="Texture2D" uid="uid://o2clw16x47ks" path="res://game/BK.png" id="2_05gcn"]
+[ext_resource type="Texture2D" uid="uid://cdhrjc8ubpkqd" path="res://game/UI/buttons/start_menu.png" id="3_v75mn"]
+[ext_resource type="Texture2D" uid="uid://case7gx7jc7i7" path="res://game/Logo.png" id="4_pqbav"]
+
+[node name="StartMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1922.0
+offset_bottom = 1076.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmq67")
+
+[node name="BK" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+scale = Vector2(1.003, 1.003)
+texture = ExtResource("2_05gcn")
+
+[node name="StartMenü" type="Sprite2D" parent="."]
+position = Vector2(1494.5, 539.3)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_v75mn")
+
+[node name="Start" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.705
+anchor_top = 0.243
+anchor_right = 0.845
+anchor_bottom = 0.417
+offset_left = 3.98987
+offset_top = 0.531982
+offset_right = 112.91
+offset_bottom = 74.308
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+focus_neighbor_top = NodePath("../End")
+focus_neighbor_bottom = NodePath("../Setting")
+theme_override_font_sizes/font_size = 60
+
+[node name="Setting" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.715
+anchor_top = 0.5
+anchor_right = 0.847
+anchor_bottom = 0.567
+offset_left = 0.769897
+offset_top = 2.0
+offset_right = 107.066
+offset_bottom = 29.908
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../End")
+theme_override_font_sizes/font_size = 60
+
+[node name="Credits" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.715
+anchor_top = 0.577
+anchor_right = 0.843
+anchor_bottom = 0.627
+offset_left = -0.230103
+offset_top = 0.147949
+offset_right = 104.754
+offset_bottom = 22.348
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../End")
+theme_override_font_sizes/font_size = 60
+
+[node name="End" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.714
+anchor_top = 0.755
+anchor_right = 0.843
+anchor_bottom = 0.834
+offset_left = 0.691895
+offset_top = -0.380066
+offset_right = 106.754
+offset_bottom = 4.61597
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+focus_neighbor_top = NodePath("../Setting")
+focus_neighbor_bottom = NodePath("../Start")
+theme_override_font_sizes/font_size = 60
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(551, 253)
+scale = Vector2(0.480347, 0.480347)
+texture = ExtResource("4_pqbav")
+
+[connection signal="button_up" from="Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="Setting" to="." method="_on_setting_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="End" to="." method="_on_end_button_up"]

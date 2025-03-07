@@ -1,0 +1,215 @@
+[gd_scene load_steps=9 format=3 uid="uid://dst3jhia2ksxk"]
+
+[ext_resource type="FontFile" uid="uid://b5j0mvn8dxgqs" path="res://game/fonts/willow.otf" id="1_0imcw"]
+[ext_resource type="Script" path="res://game/credits/credits.gd" id="1_mmwr1"]
+[ext_resource type="Texture2D" uid="uid://daovkqr2cv48a" path="res://game_feature/Tutorial/tutorial_plus.png" id="2_w7te3"]
+[ext_resource type="Texture2D" uid="uid://case7gx7jc7i7" path="res://game/Logo.png" id="3_88p4e"]
+[ext_resource type="Texture2D" uid="uid://o2clw16x47ks" path="res://game/BK.png" id="4_t7lpu"]
+
+[sub_resource type="Animation" id="Animation_irj0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(768, 1143)]
+}
+
+[sub_resource type="Animation" id="Animation_eqsew"]
+resource_name = "play_credits"
+length = 29.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 28.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(768, 1620), Vector2(768, -4300)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(28.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_back_button_up"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p4yan"]
+_data = {
+"RESET": SubResource("Animation_irj0l"),
+"play_credits": SubResource("Animation_eqsew")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmwr1")
+
+[node name="Back" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = -0.035
+anchor_right = 0.159
+anchor_bottom = 0.126
+offset_left = 1662.12
+offset_top = 25.7388
+offset_right = 1663.72
+offset_bottom = 14.8588
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_0imcw")
+theme_override_font_sizes/font_size = 50
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+libraries = {
+"": SubResource("AnimationLibrary_p4yan")
+}
+
+[node name="Label" type="Label" parent="."]
+z_index = 30
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 768.0
+offset_top = 1143.0
+offset_right = 1296.0
+offset_bottom = 5447.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_0imcw")
+theme_override_font_sizes/font_size = 40
+text = "Vivian Baehnisch
+Ilias Christovassilis
+Benjamin Köcher
+Martin Kruse
+Tim Ritter
+Lennart Schultz
+Susa Steinmetz
+
+Producer:
+Martin Kruse
+
+2D Art:
+Vivian Baehnisch
+Susa Steinmetz
+
+3D Art:
+Tim Ritter
+Lennart Schultz
+
+Art-Direction:
+Susa Steinmetz
+
+Animation:
+Lennart Schultz
+Vivian Baehnisch
+
+VFX:
+Vivian Baehnisch
+Lennart Schultz
+Susa Steinmetz
+
+Illustration:
+Susa Steinmetz
+
+Game Designer:
+Ilias Christovassilis
+Martin Kruse 
+
+Level Designer:
+Ilias Christovassilis
+
+Engineer / Programmer:
+Benjamin Köcher
+
+SFX / Music:
+Ilias Christovassilis
+
+Technical Support:
+Benjamin Köcher
+
+Emotional Damage:
+Vivian Baehnisch
+Ilias Christovassilis
+Benjamin Köcher
+Martin Kruse
+Tim Ritter
+2x Lennart Schultz
+Susa Steinmetz
+
+Emotional Support:
+Martin Kruse
+Vivian Baehnisch
+
+QA:
+Martin Kruse
+Vivian Baehnisch
+
+Special Thanks:
+Bunkus
+Christina Ross
+Noa Lösch"
+horizontal_alignment = 1
+
+[node name="Logo" type="Sprite2D" parent="Label"]
+position = Vector2(257, -289)
+scale = Vector2(0.463379, 0.463379)
+texture = ExtResource("3_88p4e")
+
+[node name="TutorialPlus" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1835, 67.9388)
+rotation = 0.718765
+scale = Vector2(0.281797, 0.289464)
+texture = ExtResource("2_w7te3")
+
+[node name="BK" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+scale = Vector2(1.003, 1.003)
+texture = ExtResource("4_t7lpu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -64.0
+offset_right = 39.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.305882, 0.466667, 0.184314)
+
+[connection signal="button_up" from="Back" to="." method="_on_back_button_up"]

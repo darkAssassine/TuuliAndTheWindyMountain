@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bunqvetaxawis"]
+
+[ext_resource type="PackedScene" uid="uid://dkg854lfu3t6a" path="res://reconstruction/hit_box/hit_box.tscn" id="1_6aes8"]
+[ext_resource type="Script" path="res://game_feature/player/player.gd" id="1_bqjyp"]
+[ext_resource type="Texture2D" uid="uid://goj4jqqff70o" path="res://icon.svg" id="2_2mieb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7bku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1p1p"]
+albedo_texture = ExtResource("2_2mieb")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oa6f0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2mieb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfugp"]
+
+[node name="Player" type="CharacterBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_bqjyp")
+
+[node name="PhysicCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_h7bku")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+material_override = SubResource("StandardMaterial3D_y1p1p")
+sprite_frames = SubResource("SpriteFrames_oa6f0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="HitBox" parent="." instance=ExtResource("1_6aes8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("BoxShape3D_nfugp")
+
+[node name="DashDuration" type="Timer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.87748)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_2mieb")
+
+[connection signal="timeout" from="DashDuration" to="." method="dash_ended"]

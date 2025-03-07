@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://bunqvetaxawis"]
+
+[ext_resource type="Script" path="res://game_feature/player/player.gd" id="1_bqjyp"]
+[ext_resource type="Texture2D" uid="uid://cbusisabtldnd" path="res://game_feature/player/player_assets/character/character.png" id="2_fdjrf"]
+[ext_resource type="Texture2D" uid="uid://cvrrf60o1444w" path="res://game_feature/player/player_assets/umbrella/umbrella.png" id="3_lxphu"]
+[ext_resource type="AudioStream" uid="uid://dok022oq7norw" path="res://game_feature/sound/FOL_PLAYER_WALK_01.mp3" id="4_6l1gl"]
+[ext_resource type="AudioStream" uid="uid://7pam2tyws6vk" path="res://game_feature/sound/FOL_PLAYER_DASH_02 (1).mp3" id="5_ipgai"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7bku"]
+size = Vector3(0.735413, 1.79675, 0.211807)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3lra"]
+size = Vector3(0.805847, 1.86597, 0.28537)
+
+[node name="Player" type="CharacterBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_bqjyp")
+speed = 7.0
+jump_strenght = 14
+dash_duration = 0.3
+floating_speed = 2.0
+wind_dampening = 20.0
+out_of_wind_time = 0.0
+jump_time_left = 0.3
+
+[node name="PhysicCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121155, 0.00616455, 0.00351715)
+shape = SubResource("BoxShape3D_h7bku")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0827165, 0)
+pixel_size = 0.002
+texture = ExtResource("2_fdjrf")
+
+[node name="HitBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0115384, 0.0322466, -0.00190735)
+shape = SubResource("BoxShape3D_l3lra")
+
+[node name="Umbrella" type="Marker3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90897, 0.0175691, -0.00115108)
+pixel_size = 0.001
+texture = ExtResource("3_lxphu")
+
+[node name="BSpawn" type="Node3D" parent="Umbrella/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80266, -0.0175691, 0.00115108)
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6l1gl")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ipgai")
+
+[connection signal="timeout" from="DashTimer" to="." method="dash_ended"]
+[connection signal="body_entered" from="HitBox" to="." method="enemy_entered"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmtaj0p36crji"]
+
+[ext_resource type="Script" path="res://game/main_game/game.gd" id="1_u6vou"]
+[ext_resource type="PackedScene" uid="uid://bunqvetaxawis" path="res://game_feature/player/player.tscn" id="3_roq5f"]
+[ext_resource type="Script" path="res://game_feature/camera/player_cam.gd" id="4_l6d21"]
+[ext_resource type="Script" path="res://game_feature/player/bullets/bullets_spawn.gd" id="5_w00v7"]
+[ext_resource type="PackedScene" uid="uid://d5pactjjy7jh" path="res://game_feature/player/bullets/bullet.tscn" id="6_3hm7u"]
+[ext_resource type="PackedScene" uid="uid://bt2dl1odpp5y5" path="res://game_feature/player/aim/aim_pints.tscn" id="7_h6ikd"]
+[ext_resource type="PackedScene" uid="uid://cqbcgcl6bid21" path="res://game/game_over_screen/game_over.tscn" id="7_t26dv"]
+[ext_resource type="PackedScene" uid="uid://ot3sxf467gag" path="res://game/start_menu/start_menu.tscn" id="8_uptro"]
+[ext_resource type="PackedScene" uid="uid://dk52uukyhw551" path="res://game/setting_menu/setting_menu.tscn" id="9_hb38u"]
+[ext_resource type="PackedScene" uid="uid://dtp6tu878rwvo" path="res://game/pause_menu/pause_menu.tscn" id="10_qr4bu"]
+[ext_resource type="PackedScene" uid="uid://bd83eigfr472u" path="res://levels/level_2.tscn" id="11_lq5j4"]
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_u6vou")
+
+[node name="Level 2" parent="." instance=ExtResource("11_lq5j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58, -1.34229, -0.5)
+
+[node name="Player" parent="." instance=ExtResource("3_roq5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2767, 1.517, 3.8147e-06)
+dash_cooldwon = 1.0
+gravity_multiplier = 2.0
+floating_speed = 3.0
+wind_dampening = 500.0
+cojote_time = 0.1
+original_jump_buffer_time = 0.1
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.0561)
+current = true
+script = ExtResource("4_l6d21")
+
+[node name="BulletSpawn" type="Node3D" parent="."]
+script = ExtResource("5_w00v7")
+bullet = ExtResource("6_3hm7u")
+aim_scene = ExtResource("7_h6ikd")
+
+[node name="AimTimer" type="Timer" parent="BulletSpawn"]
+wait_time = 0.2
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverScreen" parent="Screens" instance=ExtResource("7_t26dv")]
+process_mode = 3
+layout_mode = 1
+
+[node name="StartMenu" parent="Screens" instance=ExtResource("8_uptro")]
+layout_mode = 1
+
+[node name="Settings" parent="Screens" instance=ExtResource("9_hb38u")]
+process_mode = 3
+layout_mode = 1
+
+[node name="PauseMenu" parent="Screens" instance=ExtResource("10_qr4bu")]
+layout_mode = 1
+
+[connection signal="respawn" from="." to="Player" method="respawn"]
+[connection signal="has_shoot" from="Player" to="BulletSpawn" method="_on_player_has_shoot"]
+[connection signal="player_aim" from="Player" to="BulletSpawn" method="_on_player_player_aim"]
+[connection signal="player_died" from="Player" to="." method="player_died"]
+[connection signal="set_camera" from="Player" to="PlayerCamera" method="set_camera"]
+[connection signal="timeout" from="BulletSpawn/AimTimer" to="BulletSpawn" method="_on_aim_timer_timeout"]
+[connection signal="go_to_settings" from="Screens/StartMenu" to="Screens/Settings" method="_on_start_menu_go_to_settings"]
+[connection signal="to_pause_menu" from="Screens/Settings" to="Screens/PauseMenu" method="_on_settings_to_pause_menu"]
+[connection signal="go_to_settings" from="Screens/PauseMenu" to="Screens/Settings" method="_on_pause_menu_go_to_settings"]

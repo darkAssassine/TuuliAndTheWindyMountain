@@ -1,0 +1,159 @@
+[gd_scene load_steps=18 format=3 uid="uid://4vq14uxrkor6"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/collectable/collectable_pick_up.gd" id="1_1y54l"]
+[ext_resource type="Texture2D" uid="uid://bjt03ekr2esnp" path="res://game_feature/area3d/collectable/Collectible VFX/base_sprite.png" id="2_7epma"]
+[ext_resource type="Texture2D" uid="uid://cr2xevi6ad2nc" path="res://game_feature/area3d/collectable/Collectible VFX/1.png" id="2_vc883"]
+[ext_resource type="Texture2D" uid="uid://bo6pahycn6qs4" path="res://game_feature/area3d/collectable/Collectible VFX/2.png" id="3_ees0s"]
+[ext_resource type="Texture2D" uid="uid://dghygmwm6fh5r" path="res://game_feature/area3d/collectable/Collectible VFX/3.png" id="4_c5i7x"]
+[ext_resource type="Texture2D" uid="uid://bnadn5nvtow0d" path="res://game_feature/area3d/collectable/Collectible VFX/4.png" id="5_s0v7l"]
+[ext_resource type="Texture2D" uid="uid://cpqnbgqoeleps" path="res://game_feature/area3d/collectable/Collectible VFX/5.png" id="6_lsgyw"]
+[ext_resource type="Texture2D" uid="uid://dibvb8mhtsg2" path="res://game_feature/area3d/collectable/Collectible VFX/6.png" id="7_u5sce"]
+[ext_resource type="Texture2D" uid="uid://5rmpahneh8u7" path="res://game_feature/area3d/collectable/Collectible VFX/7.png" id="8_o6vc0"]
+[ext_resource type="Texture2D" uid="uid://bm6surjj3ueyg" path="res://game_feature/area3d/collectable/Collectible VFX/8.png" id="9_khyxm"]
+[ext_resource type="Texture2D" uid="uid://dxqfr4kqxm3md" path="res://game_feature/player/bullets/Kopie von _Ice Shot Burst/Ice Shot Burst/Empty .png" id="10_nbwo8"]
+[ext_resource type="AudioStream" uid="uid://0e5p7cqrs8o3" path="res://game_feature/sound/FOL_COLLECTABLE_SFX_V1.mp3" id="11_xco17"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lps0d"]
+size = Vector3(2.56518, 3.6164, 2.62214)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkkjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vc883")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ees0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5i7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s0v7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lsgyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u5sce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o6vc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_khyxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nbwo8")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7epma")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vvqka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"collect"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dp248"]
+resource_name = "collect"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"collect"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end_of_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebijy"]
+_data = {
+"RESET": SubResource("Animation_vvqka"),
+"collect": SubResource("Animation_dp248")
+}
+
+[node name="PickUp" type="Area3D"]
+script = ExtResource("1_1y54l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.0420551, -0.506663, 0.0214511)
+shape = SubResource("BoxShape3D_lps0d")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.327657, 0)
+pixel_size = 0.007
+sprite_frames = SubResource("SpriteFrames_vkkjo")
+animation = &"collect"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ebijy")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xco17")
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

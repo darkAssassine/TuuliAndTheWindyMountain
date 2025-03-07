@@ -1,0 +1,77 @@
+[gd_scene load_steps=16 format=3 uid="uid://co06qrgcwfe5j"]
+
+[ext_resource type="Script" path="res://game_feature/sound/song_change_area.gd" id="1_cfmug"]
+[ext_resource type="AudioStream" uid="uid://c3iegq6uesnvc" path="res://game_feature/sound/music/Project_Umbrella_winter_soundtrack.mp3" id="2_oeloh"]
+[ext_resource type="Texture2D" uid="uid://bhlpmjaqqkggo" path="res://game_feature/sound/gem/gem-1.png" id="3_2siy7"]
+[ext_resource type="Texture2D" uid="uid://ra3b0yi5guyy" path="res://game_feature/sound/cherry/cherry-1.png" id="3_kjd2n"]
+[ext_resource type="Texture2D" uid="uid://cloisuge8tqcs" path="res://game_feature/sound/gem/gem-2.png" id="4_affjf"]
+[ext_resource type="Texture2D" uid="uid://b2xkpyjsgm48s" path="res://game_feature/sound/cherry/cherry-2.png" id="4_cma74"]
+[ext_resource type="Texture2D" uid="uid://cp5fdy364yet6" path="res://game_feature/sound/cherry/cherry-3.png" id="5_26u60"]
+[ext_resource type="Texture2D" uid="uid://bklurlnd6y6wd" path="res://game_feature/sound/gem/gem-3.png" id="5_aa0yr"]
+[ext_resource type="Texture2D" uid="uid://cf4amuvx0yix6" path="res://game_feature/sound/cherry/cherry-4.png" id="6_8fcim"]
+[ext_resource type="Texture2D" uid="uid://c2l6fkbmwo44" path="res://game_feature/sound/gem/gem-4.png" id="6_ay3l7"]
+[ext_resource type="Texture2D" uid="uid://b4pgf0d8s63ob" path="res://game_feature/sound/gem/gem-5.png" id="7_1r0t2"]
+[ext_resource type="Texture2D" uid="uid://dkw7g2yfioijw" path="res://game_feature/sound/cherry/cherry-5.png" id="7_d4yp4"]
+[ext_resource type="Texture2D" uid="uid://bv5aynq8sex4n" path="res://game_feature/sound/cherry/cherry-6.png" id="8_pad4m"]
+[ext_resource type="Texture2D" uid="uid://cycoyx5t5x8kl" path="res://game_feature/sound/cherry/cherry-7.png" id="9_1n4ba"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mr4fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2siy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_affjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aa0yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ay3l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1r0t2")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kjd2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cma74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_26u60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8fcim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d4yp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pad4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1n4ba")
+}],
+"loop": true,
+"name": &"red",
+"speed": 8.0
+}]
+
+[node name="song_change" type="Area3D"]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_cfmug")
+song = ExtResource("2_oeloh")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.1
+sprite_frames = SubResource("SpriteFrames_mr4fc")
+animation = &"blue"
+frame_progress = 0.247121

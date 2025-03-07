@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://748pkv04kc0a"]
+
+[ext_resource type="ArrayMesh" uid="uid://utpg3ubvr73g" path="res://enviroment/Tanne halb wavefront UV.obj" id="1_cuylf"]
+[ext_resource type="ArrayMesh" uid="uid://df28bx6gn7qgd" path="res://enviroment/trees/tree/tree.obj" id="2_7itfv"]
+[ext_resource type="Shader" uid="uid://dkp3d88ltk8vh" path="res://enviroment/trees/tree/tree example.tres" id="3_osyvm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydu28"]
+render_priority = 0
+shader = ExtResource("3_osyvm")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.012, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.3624, 0)
+
+[node name="TanneHalbWavefrontUv" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9753, 50.3751, -50.7567)
+mesh = ExtResource("1_cuylf")
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999841, 0, -0.0178189, 0, 1, 0, 0.0178189, 0, 0.999841, -79.4383, 20.3308, -80.6576)
+mesh = ExtResource("2_7itfv")
+surface_material_override/0 = SubResource("ShaderMaterial_ydu28")

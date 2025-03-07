@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8uiku1ree6jq"]
+
+[ext_resource type="PackedScene" uid="uid://d0emlivs5jmy5" path="res://enviroment/probs/totes zeug/Laterne.glb" id="1_fbsr4"]
+
+[node name="Laterne" instance=ExtResource("1_fbsr4")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13264, 0.349132, 0.377427)
+light_color = Color(1, 0.603922, 0.207843, 1)
+light_energy = 3.315
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.753847, 0.349132, 0.00653869)
+light_color = Color(1, 0.603922, 0.207843, 1)
+light_energy = 3.315
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51844, 0.349132, 0.0335004)
+light_color = Color(1, 0.603922, 0.207843, 1)
+light_energy = 3.315

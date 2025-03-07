@@ -1,0 +1,696 @@
+[gd_scene load_steps=75 format=3 uid="uid://bunqvetaxawis"]
+
+[ext_resource type="Script" path="res://game_feature/player/player.gd" id="1_fp04l"]
+[ext_resource type="PackedScene" uid="uid://dlfhnrjcdvbv8" path="res://game_feature/player/VFX/run_vfx/run_vfx.tscn" id="2_frlb8"]
+[ext_resource type="Texture2D" uid="uid://ccoslovyallry" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/10.png" id="2_ltdjn"]
+[ext_resource type="Texture2D" uid="uid://choa3nu6roxua" path="res://game_feature/player/player_assets/animations/0.5.png" id="3_5mew6"]
+[ext_resource type="PackedScene" uid="uid://bq4kqmxactfnb" path="res://game_feature/player/VFX/dash_vfx/dash_vfx.tscn" id="3_vs7ra"]
+[ext_resource type="AudioStream" uid="uid://dok022oq7norw" path="res://game_feature/sound/FOL_PLAYER_WALK_01.mp3" id="4_6l1gl"]
+[ext_resource type="PackedScene" uid="uid://d5pactjjy7jh" path="res://game_feature/player/bullets/bullet.tscn" id="4_8pjy1"]
+[ext_resource type="Texture2D" uid="uid://i5peau1sl6w0" path="res://game_feature/player/player_assets/animations/fall(faster)/fall1.png" id="4_h5rk8"]
+[ext_resource type="Texture2D" uid="uid://b31pqlklvj8qi" path="res://game_feature/player/player_assets/animations/fall(faster)/fall2.png" id="5_3ot7h"]
+[ext_resource type="AudioStream" uid="uid://7pam2tyws6vk" path="res://game_feature/sound/FOL_PLAYER_DASH_02 (1).mp3" id="5_ipgai"]
+[ext_resource type="Texture2D" uid="uid://b54jk87gu866r" path="res://game_feature/player/player_assets/animations/fall(faster)/fall3.png" id="6_k7nhr"]
+[ext_resource type="Texture2D" uid="uid://bfvq85ysuuwee" path="res://game_feature/player/player_assets/animations/fly/fly1.png" id="7_yamiv"]
+[ext_resource type="Texture2D" uid="uid://dxgbs8c63jk1f" path="res://game_feature/player/player_assets/animations/fly/fly3.png" id="8_wndke"]
+[ext_resource type="Texture2D" uid="uid://c0rynf28wlt7t" path="res://game_feature/player/player_assets/animations/fly/fly 2.png" id="9_32n1t"]
+[ext_resource type="Texture2D" uid="uid://doygrgdgw6yrt" path="res://game_feature/player/player_assets/animations/Idle(new)/1.png" id="10_0blaw"]
+[ext_resource type="Texture2D" uid="uid://c6c6vokrbynru" path="res://game_feature/player/player_assets/animations/Idle(new)/2.png" id="11_dpoet"]
+[ext_resource type="Texture2D" uid="uid://gu0c35ailvvk" path="res://game_feature/player/player_assets/animations/Idle(new)/3.png" id="12_0foym"]
+[ext_resource type="Texture2D" uid="uid://341rq4xhkcbu" path="res://game_feature/player/player_assets/animations/Idle(new)/4.png" id="13_n4wc1"]
+[ext_resource type="Texture2D" uid="uid://bwqbu27fs3qcr" path="res://game_feature/player/player_assets/animations/Idle(new)/5.png" id="14_cf5tu"]
+[ext_resource type="Texture2D" uid="uid://bt817h8jbo4qi" path="res://game_feature/player/player_assets/animations/Idle(new)/6.png" id="15_k0usm"]
+[ext_resource type="Texture2D" uid="uid://0xtjyn0i8ih5" path="res://game_feature/player/player_assets/animations/Idle(new)/7.png" id="16_mtond"]
+[ext_resource type="Texture2D" uid="uid://c2i3i043gea66" path="res://game_feature/player/player_assets/animations/Idle(new)/8.png" id="17_obx23"]
+[ext_resource type="Texture2D" uid="uid://c13lsssyx80ai" path="res://game_feature/player/player_assets/animations/Idle(new)/9.png" id="18_mhory"]
+[ext_resource type="Texture2D" uid="uid://n4wqfylxfai5" path="res://game_feature/player/player_assets/animations/Idle(new)/10.png" id="19_2hjre"]
+[ext_resource type="Texture2D" uid="uid://1on75lfwlm8n" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/1.png" id="20_fvd5l"]
+[ext_resource type="Texture2D" uid="uid://bxmguis7kgh88" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/2.png" id="21_sphg5"]
+[ext_resource type="Texture2D" uid="uid://ca3q554x0xnak" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/3.png" id="22_yavmj"]
+[ext_resource type="Texture2D" uid="uid://cwmrl21ba7tma" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/4.png" id="23_jf8jj"]
+[ext_resource type="Texture2D" uid="uid://c2i06sgns32j0" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/5.png" id="24_y24lc"]
+[ext_resource type="Texture2D" uid="uid://cj8ks7qqq5f3b" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/6.png" id="25_5hye2"]
+[ext_resource type="Texture2D" uid="uid://cfgh7ak7tpk8o" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/7.png" id="26_8j6aq"]
+[ext_resource type="Texture2D" uid="uid://bkfrs31qheyx7" path="res://game_feature/player/player_assets/animations/jump(newnewnew)/8.png" id="27_obot3"]
+[ext_resource type="Texture2D" uid="uid://dsorsdfklhu3v" path="res://game_feature/player/player_assets/animations/Walkcycle/1.png" id="28_lb7oy"]
+[ext_resource type="Texture2D" uid="uid://wc1m4mh7na3v" path="res://game_feature/player/player_assets/animations/Walkcycle/2.png" id="29_frni4"]
+[ext_resource type="Texture2D" uid="uid://da81vb0mk6aag" path="res://game_feature/player/player_assets/animations/Walkcycle/3.png" id="30_mxa83"]
+[ext_resource type="Texture2D" uid="uid://ik1504njk53k" path="res://game_feature/player/player_assets/animations/Walkcycle/4.png" id="31_jarbt"]
+[ext_resource type="Texture2D" uid="uid://cbusisabtldnd" path="res://game_feature/player/player_assets/animations/character.png" id="32_ivm10"]
+[ext_resource type="Texture2D" uid="uid://dicidbpwx01qb" path="res://game_feature/player/bullets/Ice shot blast 2/1.png" id="38_5i8al"]
+[ext_resource type="Script" path="res://game_feature/player/BulletSpawn.gd" id="38_blogm"]
+[ext_resource type="Texture2D" uid="uid://rbf03fie6p71" path="res://game_feature/player/bullets/Ice shot blast 2/2.png" id="39_sdjbe"]
+[ext_resource type="Texture2D" uid="uid://c7vqrqyk14kgo" path="res://game_feature/player/player_assets/umbrella/new_umbrellapng.png" id="39_u44px"]
+[ext_resource type="Texture2D" uid="uid://bp6dysewax4me" path="res://game_feature/player/bullets/Ice shot blast 2/3.png" id="40_6v4kr"]
+[ext_resource type="Script" path="res://game_feature/player/shooting_ray_cast.gd" id="40_in002"]
+[ext_resource type="Texture2D" uid="uid://bbeq0h21h64k7" path="res://game_feature/player/bullets/Ice shot blast 2/4.png" id="41_d0yxc"]
+[ext_resource type="Texture2D" uid="uid://pwmgsb80kogp" path="res://game_feature/player/bullets/Ice shot blast 2/5.png" id="42_6ofws"]
+[ext_resource type="Texture2D" uid="uid://tn32yhir2pff" path="res://game_feature/player/bullets/Ice shot blast 2/6.png" id="43_kdbm3"]
+[ext_resource type="Texture2D" uid="uid://ccebpt45bidwo" path="res://game_feature/player/bullets/Ice shot blast 2/7.png" id="44_epuif"]
+[ext_resource type="Texture2D" uid="uid://cs5kw81aravro" path="res://game_feature/player/bullets/Ice shot blast 2/8.png" id="45_cnqyo"]
+[ext_resource type="Texture2D" uid="uid://bmqtyiqn7ocni" path="res://game_feature/player/bullets/Ice shot blast 2/9.png" id="46_np8we"]
+[ext_resource type="Texture2D" uid="uid://ce35bqu5mtebp" path="res://game_feature/player/bullets/Ice shot blast 2/10.png" id="47_wei81"]
+[ext_resource type="Texture2D" uid="uid://mqkphkfl73m1" path="res://game_feature/player/bullets/Ice shot blast 2/11.png" id="48_veid0"]
+[ext_resource type="Texture2D" uid="uid://ds8imgrqs26nv" path="res://game_feature/player/bullets/Ice shot blast 2/12.png" id="49_26sdl"]
+[ext_resource type="Texture2D" uid="uid://cuucdyjna6kyn" path="res://game_feature/player/bullets/Ice shot blast 2/13.png" id="50_2vr48"]
+[ext_resource type="Texture2D" uid="uid://dvewrneg6j2kn" path="res://game_feature/player/bullets/Ice shot blast 2/14.png" id="51_a4ctb"]
+[ext_resource type="Texture2D" uid="uid://duop5bka551kw" path="res://game_feature/player/bullets/Ice shot blast 2/15.png" id="52_xb6rl"]
+[ext_resource type="Texture2D" uid="uid://b5hatyhimcpuv" path="res://game_feature/player/bullets/Ice shot blast 2/16.png" id="53_j2o5p"]
+[ext_resource type="Texture2D" uid="uid://c1vq54q083u4u" path="res://game_feature/player/bullets/Ice shot blast 2/17.png" id="54_8guod"]
+[ext_resource type="Texture2D" uid="uid://cgfqofgw3kg3f" path="res://game_feature/player/bullets/Ice shot blast 2/18.png" id="55_764ex"]
+[ext_resource type="Texture2D" uid="uid://dbkaxl11lgp04" path="res://game_feature/player/bullets/Ice shot blast 2/19.png" id="56_cucw2"]
+[ext_resource type="Texture2D" uid="uid://dpqwhttnkd2cf" path="res://game_feature/player/bullets/Ice shot blast 2/20.png" id="57_7reln"]
+[ext_resource type="PackedScene" uid="uid://btq7lxo8vagsm" path="res://game_feature/player/player_camera.tscn" id="60_73ju1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03w5w"]
+size = Vector3(0.688011, 1.69315, 0.0473282)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3lra"]
+size = Vector3(0.801414, 1.6861, 0.123828)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcjff"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ltdjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mew6")
+}],
+"loop": true,
+"name": &"fall_ended",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h5rk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ot7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k7nhr")
+}],
+"loop": true,
+"name": &"fall_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yamiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wndke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_32n1t")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0blaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dpoet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0foym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n4wc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cf5tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k0usm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mtond")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_obx23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mhory")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2hjre")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fvd5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sphg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yavmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jf8jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y24lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5hye2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8j6aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_obot3")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_lb7oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_frni4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mxa83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jarbt")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ivm10")
+}],
+"loop": true,
+"name": &"sprite",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_88kqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6h4im"]
+resource_name = "fall"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_wja64"]
+resource_name = "fall_ended"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall_ended"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_s5lui"]
+resource_name = "fall_idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_2likv"]
+resource_name = "fly"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fly"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_gcvy0"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_pqipk"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_k0u0d"]
+resource_name = "run"
+length = 0.36
+loop_mode = 1
+step = 0.09
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.18, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20vof"]
+_data = {
+"RESET": SubResource("Animation_88kqx"),
+"fall": SubResource("Animation_6h4im"),
+"fall_ended": SubResource("Animation_wja64"),
+"fall_idle": SubResource("Animation_s5lui"),
+"fly": SubResource("Animation_2likv"),
+"idle": SubResource("Animation_gcvy0"),
+"jump": SubResource("Animation_pqipk"),
+"run": SubResource("Animation_k0u0d")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv84t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_5i8al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sdjbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_6v4kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_d0yxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6ofws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_kdbm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_epuif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_cnqyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_np8we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_wei81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_veid0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_26sdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2vr48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_a4ctb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xb6rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_j2o5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_8guod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_764ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_cucw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7reln")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 50.0
+}]
+
+[node name="Player" type="CharacterBody3D"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4484, 0)
+collision_mask = 7
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+platform_on_leave = 2
+script = ExtResource("1_fp04l")
+dash_time = 0.15
+dash_speed = 13.0
+dash_cooldwon = 1.5
+frezze_timer_wait_timer = 0.01
+run_partice_spawn_timer = 0.12
+dash_vfx_timer = 0.02
+knockback_duration = 1.0
+run_partice = ExtResource("2_frlb8")
+dash_vfx = ExtResource("3_vs7ra")
+bullet = ExtResource("4_8pjy1")
+
+[node name="PhysicShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00933452, -0.313386, -0.000957483)
+shape = SubResource("BoxShape3D_03w5w")
+
+[node name="HitBox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.419074, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024044, 0.0730691, -0.0226553)
+shape = SubResource("BoxShape3D_l3lra")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.003
+shaded = true
+sprite_frames = SubResource("SpriteFrames_qcjff")
+animation = &"jump"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_20vof")
+}
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6l1gl")
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ipgai")
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ipgai")
+pitch_scale = 2.0
+mix_target = 1
+bus = &"sfx"
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="FrezzeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Particle" type="Node3D" parent="."]
+top_level = true
+
+[node name="BulletSpawn" type="Node3D" parent="."]
+top_level = true
+script = ExtResource("38_blogm")
+
+[node name="Umbrella" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108327, -0.489172, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15537, -0.0743556, 0)
+sorting_offset = -10.0
+pixel_size = 0.003
+texture = ExtResource("39_u44px")
+
+[node name="BSpawn" type="Node3D" parent="Umbrella/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.869442, -0.0175691, 0.00115108)
+
+[node name="Timer" type="Timer" parent="Umbrella/Sprite3D/BSpawn"]
+wait_time = 0.06
+
+[node name="RayCast3D" type="RayCast3D" parent="Umbrella/Sprite3D/BSpawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869442, 0.0175691, -0.00115108)
+enabled = false
+target_position = Vector3(-3.5, 0, 0)
+collision_mask = 4
+hit_from_inside = true
+script = ExtResource("40_in002")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48841, -0.0647252, 0)
+pixel_size = 0.002
+sprite_frames = SubResource("SpriteFrames_yv84t")
+animation = &"shoot"
+frame = 19
+
+[node name="LeftMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.363594, -0.180076, 0)
+
+[node name="RightMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402785, -0.248934, 0)
+
+[node name="ParticleSpawnPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00445, 0)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 31.0
+offset_top = 479.0
+offset_right = 122.0
+offset_bottom = 491.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91377, 2.52266)
+visible = false
+light_color = Color(0.937255, 0.913725, 0.803922, 1)
+light_energy = 1.377
+light_indirect_energy = 7.641
+omni_range = 22.068
+omni_attenuation = 0.31864
+
+[node name="PlayerCamera" parent="." instance=ExtResource("60_73ju1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38405, -0.692749, 14.457)
+offset = Vector2(-1, 2)
+max_offset_x = 2.0
+max_offset_y = 2.0
+acceleration_x = 2.0
+acceleration_y = 1.0
+max_wall_offset = Vector2(1, 2)
+wall_acceleration = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="PlayerCamera"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="PlayerCamera"]
+
+[node name="CameraRayCastRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.399678, 0)
+target_position = Vector3(10, 0, 0)
+collision_mask = 7
+
+[node name="CameraRaycastUp" type="RayCast3D" parent="."]
+target_position = Vector3(0, 2, 0)
+collision_mask = 7
+
+[connection signal="area_entered" from="HitBox" to="." method="enemy_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="enemy_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="enemy_exited"]
+[connection signal="timeout" from="DashTimer" to="." method="dash_ended"]
+[connection signal="timeout" from="DashCooldown" to="." method="cooldown_ended"]
+[connection signal="timeout" from="FrezzeTimer" to="." method="_on_frezze_timer_timeout"]
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+[connection signal="timeout" from="Umbrella/Sprite3D/BSpawn/Timer" to="Umbrella/Sprite3D/BSpawn/RayCast3D" method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerCamera/Timer" to="PlayerCamera" method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerCamera/Timer2" to="PlayerCamera" method="_on_timer_2_timeout"]

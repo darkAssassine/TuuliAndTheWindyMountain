@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3 uid="uid://bmtaj0p36crji"]
+
+[ext_resource type="Script" path="res://game/main_game/game.gd" id="1_u6vou"]
+[ext_resource type="Script" path="res://game/main_game/level_manager.gd" id="2_x1pkd"]
+[ext_resource type="PackedScene" uid="uid://ewufqvjdedlk" path="res://levels/Game_Levels/Level_1.tscn" id="3_vho07"]
+[ext_resource type="Script" path="res://game_feature/camera/player_cam.gd" id="4_l6d21"]
+[ext_resource type="PackedScene" uid="uid://cqbcgcl6bid21" path="res://game/game_over_screen/game_over.tscn" id="7_t26dv"]
+[ext_resource type="PackedScene" uid="uid://ot3sxf467gag" path="res://game/start_menu/start_menu.tscn" id="8_uptro"]
+[ext_resource type="PackedScene" uid="uid://bunqvetaxawis" path="res://game_feature/player/player.tscn" id="9_0tqnd"]
+[ext_resource type="PackedScene" uid="uid://dk52uukyhw551" path="res://game/setting_menu/setting_menu.tscn" id="9_hb38u"]
+[ext_resource type="PackedScene" uid="uid://dtp6tu878rwvo" path="res://game/pause_menu/pause_menu.tscn" id="10_qr4bu"]
+[ext_resource type="Texture2D" uid="uid://cofq2kp2klxgo" path="res://enviroment/Background.V1.PNG" id="12_kol8y"]
+[ext_resource type="PackedScene" uid="uid://b17n7p23akth6" path="res://game_feature/area3d/wind/particle_system_test/wind particle effect.tscn" id="12_o36co"]
+[ext_resource type="PackedScene" uid="uid://b7yafyxlcgy0m" path="res://game_feature/sound/audio_stream_player.tscn" id="12_xpwl6"]
+[ext_resource type="AudioStream" uid="uid://bnkafrdx8o7qh" path="res://game_feature/sound/Umbrella_Theme.mp3" id="13_cn6to"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an71j"]
+
+[sub_resource type="Environment" id="Environment_r5wu2"]
+volumetric_fog_density = 0.7412
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_u6vou")
+
+[node name="Levels" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_x1pkd")
+player = NodePath("../Player")
+
+[node name="LevelTimer" type="Timer" parent="Levels"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Level_1" parent="Levels" instance=ExtResource("3_vho07")]
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverScreen" parent="Screens" instance=ExtResource("7_t26dv")]
+process_mode = 3
+layout_mode = 1
+
+[node name="StartMenu" parent="Screens" instance=ExtResource("8_uptro")]
+layout_mode = 1
+
+[node name="Settings" parent="Screens" instance=ExtResource("9_hb38u")]
+process_mode = 3
+layout_mode = 1
+
+[node name="PauseMenu" parent="Screens" instance=ExtResource("10_qr4bu")]
+layout_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("9_0tqnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3015, 1.53288, 0)
+dash_cooldwon = 1.0
+gravity_multiplier = 2.0
+floating_speed = 3.0
+wind_dampening = 250.0
+cojote_time = 0.2
+original_jump_buffer_time = 0.2
+
+[node name="PlayerCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.767632, -0.13199, 16.8795)
+cull_mask = 1048571
+current = true
+script = ExtResource("4_l6d21")
+random_shake_strenght = 1.0
+shake_duration = 25.0
+
+[node name="Area3D" type="Area3D" parent="Player"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+shape = SubResource("BoxShape3D_an71j")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Background" type="Sprite3D" parent="Environment"]
+transform = Transform3D(159.627, 0, 0, 0, 100, 0, 0, 0, 100, 790.4, 7.34876, -1350.37)
+texture = ExtResource("12_kol8y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.970809, 0.239855, 0, -0.239855, 0.970809, 0, 0, 0)
+
+[node name="WindParticle" parent="Environment" instance=ExtResource("12_o36co")]
+transform = Transform3D(0.9693, -0.245883, 0, 0.245883, 0.9693, 0, 0, 0, 1, 57.7334, 119.902, -0.515442)
+amount = 10000
+lifetime = 26.69
+collision_base_size = 0.0
+visibility_aabb = AABB(-114.577, -152.903, -4.22945, 229.155, 305.805, 8.4589)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_r5wu2")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("12_xpwl6")]
+current_song = ExtResource("13_cn6to")
+
+[connection signal="respawn" from="." to="Player" method="respawn"]
+[connection signal="timeout" from="Levels/LevelTimer" to="Levels" method="_on_level_timer_timeout"]
+[connection signal="go_to_settings" from="Screens/StartMenu" to="Screens/Settings" method="_on_start_menu_go_to_settings"]
+[connection signal="to_pause_menu" from="Screens/Settings" to="Screens/PauseMenu" method="_on_settings_to_pause_menu"]
+[connection signal="go_to_settings" from="Screens/PauseMenu" to="Screens/Settings" method="_on_pause_menu_go_to_settings"]
+[connection signal="camera_shake" from="Player" to="Player/PlayerCamera" method="apply_strenght"]
+[connection signal="player_died" from="Player" to="." method="player_died"]
+[connection signal="player_died" from="Player" to="Levels" method="_on_player_player_died"]
+[connection signal="area_entered" from="Player/Area3D" to="AudioStreamPlayer" method="change_song"]

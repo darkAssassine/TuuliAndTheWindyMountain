@@ -1,0 +1,37 @@
+[gd_resource type="VisualShader" load_steps=4 format=3 uid="uid://cfhvhc76b88ga"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ona2"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_teyf7"]
+texture = SubResource("NoiseTexture2D_5ona2")
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_layji"]
+constant = Color(0.641953, 0.00737998, 0.388091, 1)
+
+[resource]
+code = "shader_type sky;
+
+
+
+void sky() {
+// ColorConstant:3
+	vec4 n_out3p0 = vec4(0.641953, 0.007380, 0.388091, 1.000000);
+
+
+// Output:0
+	COLOR = vec3(n_out3p0.xyz);
+
+
+}
+"
+mode = 3
+flags/use_half_res_pass = false
+flags/use_quarter_res_pass = false
+flags/disable_fog = false
+flags/use_debanding = false
+nodes/sky/0/position = Vector2(520, 140)
+nodes/sky/2/node = SubResource("VisualShaderNodeTexture_teyf7")
+nodes/sky/2/position = Vector2(80, 120)
+nodes/sky/3/node = SubResource("VisualShaderNodeColorConstant_layji")
+nodes/sky/3/position = Vector2(260, 300)
+nodes/sky/connections = PackedInt32Array(3, 0, 0, 0)

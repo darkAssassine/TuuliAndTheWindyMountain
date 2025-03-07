@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7itixmjlbe5c"]
+
+[ext_resource type="PackedScene" uid="uid://dw811ukimraq6" path="res://enviroment/probs/höhle/Fackel.glb" id="1_vq6mf"]
+
+[node name="Fackel" type="Node3D"]
+
+[node name="Fackel" parent="." instance=ExtResource("1_vq6mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212783, 0, -0.109877)

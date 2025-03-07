@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1bmqtpd1u02x"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/plattfroms/wind_stop/wind_stop_area/wind_stop_box.gd" id="1_c2d8i"]
+[ext_resource type="Texture2D" uid="uid://cfmrmyyjjvj4p" path="res://game_feature/area3d/wind/particle_system_test/snowflake.png" id="2_fgqbv"]
+
+[node name="wind_stop_area" type="Area3D"]
+script = ExtResource("1_c2d8i")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.001
+texture = ExtResource("2_fgqbv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://moyassx1ngu3"]
+
+[ext_resource type="PackedScene" uid="uid://botfu7jpgjyb8" path="res://enviroment/probs/höhle/Lampu.glb" id="1_nfnyf"]
+
+[node name="Gaslampe" type="Node3D"]
+
+[node name="Lampu" parent="." instance=ExtResource("1_nfnyf")]
+transform = Transform3D(0.245082, 0.0493416, 0, -0.0493416, 0.245082, 0, 0, 0, 0.25, 0, 0, 0)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://civam0f0pon3f"]
+
+[ext_resource type="PackedScene" uid="uid://d5pactjjy7jh" path="res://game_feature/player/bullets/bullet.tscn" id="2_ni0bv"]
+[ext_resource type="PackedScene" uid="uid://bt2dl1odpp5y5" path="res://game_feature/player/aim/aim_pints.tscn" id="3_ru74t"]
+
+[sub_resource type="GDScript" id="GDScript_kkaty"]
+script/source = "extends Node3D
+
+@export var bullet : PackedScene
+@export var aim_scene : PackedScene
+var DIRECTION = Vector2.ZERO
+var spawn_position = Vector2.ZERO
+
+var timer : bool = false
+
+func _on_aim_timer_timeout():
+	timer = false
+
+
+func _on_player_has_shoot(spawn_position, direction):
+	var b = bullet.instantiate()
+	b.position.x = spawn_position.x
+	b.position.y = spawn_position.y
+	DIRECTION = direction
+	add_child(b)
+	b.global_position.x = spawn_position.x
+	b.global_position.y = spawn_position.y
+
+
+#func _on_player_player_aim(spawn_position, direction):
+	
+	#if timer == false:
+	#	var a = aim_scene.instantiate()
+	#	a.position.x = spawn_position.x
+	#	a.position.y = spawn_position.y
+	#	DIRECTION = direction
+	#	add_child(a)
+	#	$AimTimer.start()
+	#	timer = true
+"
+
+[node name="BulletSpawn" type="Node3D"]
+script = SubResource("GDScript_kkaty")
+bullet = ExtResource("2_ni0bv")
+aim_scene = ExtResource("3_ru74t")
+
+[node name="AimTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="AimTimer" to="." method="_on_aim_timer_timeout"]

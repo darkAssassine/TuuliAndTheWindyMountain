@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc468j50034u7"
+path="res://.godot/imported/snowflake.obj-1ac06d332684d250678b6ea740a563e0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snowflake.obj-1ac06d332684d250678b6ea740a563e0.mesh"]
+
+source_file="res://game_feature/area3d/wind/particle_system_test/snowflake.obj"
+dest_files=["res://.godot/imported/snowflake.obj-1ac06d332684d250678b6ea740a563e0.mesh", "res://.godot/imported/snowflake.obj-1ac06d332684d250678b6ea740a563e0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

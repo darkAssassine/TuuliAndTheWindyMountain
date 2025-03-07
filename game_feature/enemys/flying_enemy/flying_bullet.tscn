@@ -1,0 +1,340 @@
+[gd_scene load_steps=38 format=3 uid="uid://c6wh0h1spl2ok"]
+
+[ext_resource type="Script" path="res://game_feature/enemys/flying_enemy/flying_bullet.gd" id="1_y0f3c"]
+[ext_resource type="Texture2D" uid="uid://dicidbpwx01qb" path="res://game_feature/player/bullets/Ice shot blast 2/1.png" id="2_iev4r"]
+[ext_resource type="Texture2D" uid="uid://rbf03fie6p71" path="res://game_feature/player/bullets/Ice shot blast 2/2.png" id="3_xy6pn"]
+[ext_resource type="Texture2D" uid="uid://bp6dysewax4me" path="res://game_feature/player/bullets/Ice shot blast 2/3.png" id="4_p4yfo"]
+[ext_resource type="Texture2D" uid="uid://bbeq0h21h64k7" path="res://game_feature/player/bullets/Ice shot blast 2/4.png" id="5_bwfsu"]
+[ext_resource type="Texture2D" uid="uid://pwmgsb80kogp" path="res://game_feature/player/bullets/Ice shot blast 2/5.png" id="6_kj83f"]
+[ext_resource type="Texture2D" uid="uid://tn32yhir2pff" path="res://game_feature/player/bullets/Ice shot blast 2/6.png" id="7_j3qbt"]
+[ext_resource type="Texture2D" uid="uid://ccebpt45bidwo" path="res://game_feature/player/bullets/Ice shot blast 2/7.png" id="8_66bai"]
+[ext_resource type="Texture2D" uid="uid://cs5kw81aravro" path="res://game_feature/player/bullets/Ice shot blast 2/8.png" id="9_hubxr"]
+[ext_resource type="Texture2D" uid="uid://bmqtyiqn7ocni" path="res://game_feature/player/bullets/Ice shot blast 2/9.png" id="10_kr3x2"]
+[ext_resource type="Texture2D" uid="uid://ce35bqu5mtebp" path="res://game_feature/player/bullets/Ice shot blast 2/10.png" id="11_8fwwf"]
+[ext_resource type="Texture2D" uid="uid://mqkphkfl73m1" path="res://game_feature/player/bullets/Ice shot blast 2/11.png" id="12_njl3m"]
+[ext_resource type="Texture2D" uid="uid://ds8imgrqs26nv" path="res://game_feature/player/bullets/Ice shot blast 2/12.png" id="13_hsbyx"]
+[ext_resource type="Texture2D" uid="uid://cuucdyjna6kyn" path="res://game_feature/player/bullets/Ice shot blast 2/13.png" id="14_l3dxc"]
+[ext_resource type="Texture2D" uid="uid://dvewrneg6j2kn" path="res://game_feature/player/bullets/Ice shot blast 2/14.png" id="15_knmp3"]
+[ext_resource type="Texture2D" uid="uid://duop5bka551kw" path="res://game_feature/player/bullets/Ice shot blast 2/15.png" id="16_1cnq1"]
+[ext_resource type="Texture2D" uid="uid://b5hatyhimcpuv" path="res://game_feature/player/bullets/Ice shot blast 2/16.png" id="17_bxoai"]
+[ext_resource type="Texture2D" uid="uid://c1vq54q083u4u" path="res://game_feature/player/bullets/Ice shot blast 2/17.png" id="18_sowv8"]
+[ext_resource type="Texture2D" uid="uid://cgfqofgw3kg3f" path="res://game_feature/player/bullets/Ice shot blast 2/18.png" id="19_a2yh8"]
+[ext_resource type="Texture2D" uid="uid://dbkaxl11lgp04" path="res://game_feature/player/bullets/Ice shot blast 2/19.png" id="20_jq8pi"]
+[ext_resource type="Texture2D" uid="uid://dpqwhttnkd2cf" path="res://game_feature/player/bullets/Ice shot blast 2/20.png" id="21_i582e"]
+[ext_resource type="Texture2D" uid="uid://chpwki4nhfd7u" path="res://game_feature/enemys/flying_enemy/snowball.png" id="22_28giu"]
+[ext_resource type="Texture2D" uid="uid://rrsu7wf580eg" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/1.png" id="23_aoa4a"]
+[ext_resource type="Texture2D" uid="uid://quv4hgl740fp" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/2.png" id="24_35oy6"]
+[ext_resource type="Texture2D" uid="uid://dh0c5161eslvm" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/3.png" id="25_tcmii"]
+[ext_resource type="Texture2D" uid="uid://suqdnonh1eeq" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/4.png" id="26_x2b6d"]
+[ext_resource type="Texture2D" uid="uid://bdqsid2fdu2me" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/5.png" id="27_6npkc"]
+[ext_resource type="Texture2D" uid="uid://dbhv56fu1shql" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/6.png" id="28_68chn"]
+[ext_resource type="Texture2D" uid="uid://cri0iumgh4isl" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/7.png" id="29_g2wh8"]
+[ext_resource type="Texture2D" uid="uid://3bdk1npjxqn1" path="res://game_feature/enemys/flying_enemy/animations/VFX Trail/8.png" id="30_x8dki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxirk"]
+size = Vector3(0.677806, 0.446365, 0.884399)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gctdm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iev4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xy6pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p4yfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bwfsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kj83f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j3qbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_66bai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hubxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kr3x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8fwwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_njl3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hsbyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l3dxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_knmp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1cnq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bxoai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sowv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a2yh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jq8pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i582e")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_28giu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 40.0
+}]
+
+[sub_resource type="Animation" id="Animation_vvbcs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 3.14159)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dqx7u"]
+resource_name = "dead"
+length = 1.02
+loop_mode = 1
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dead"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.36, 0.42, 0.48, 0.54, 0.6, 0.66, 0.72, 0.78, 0.84, 0.9, 0.96, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 19]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.02),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dead"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 3.14159)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6rn4o"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4nj0"]
+_data = {
+"RESET": SubResource("Animation_vvbcs"),
+"dead": SubResource("Animation_dqx7u"),
+"idle": SubResource("Animation_6rn4o")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojct8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_aoa4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_35oy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tcmii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x2b6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6npkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_68chn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_g2wh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_x8dki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="FlyingBullet" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49847, 0, 0)
+collision_layer = 0
+script = ExtResource("1_y0f3c")
+speed = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7841, -0.063052, -0.0578003)
+shape = SubResource("BoxShape3D_bxirk")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-1, -2.53518e-06, 0, 2.53518e-06, -1, 0, 0, 0, 1, 1.72865, -0.104927, 0)
+pixel_size = 0.002
+sprite_frames = SubResource("SpriteFrames_gctdm")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite3D")
+libraries = {
+"": SubResource("AnimationLibrary_i4nj0")
+}
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12959, -0.128033, 0)
+sprite_frames = SubResource("SpriteFrames_ojct8")
+frame_progress = 0.22886
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

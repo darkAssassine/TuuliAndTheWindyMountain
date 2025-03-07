@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjlyjbweawvyb"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/load_level_area/load_level_area.gd" id="1_kdjtv"]
+
+[node name="LoadScene" type="Area3D"]
+script = ExtResource("1_kdjtv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

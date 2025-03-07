@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://11tau2scfpko"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/wind/wind.gd" id="1_3o8qh"]
+
+[node name="Wind" type="Area3D"]
+script = ExtResource("1_3o8qh")
+
+[connection signal="area_entered" from="." to="." method="area_entered"]
+[connection signal="area_exited" from="." to="." method="area_exited"]
+[connection signal="body_entered" from="." to="." method="_wind_entered"]
+[connection signal="body_exited" from="." to="." method="_wind_exited"]

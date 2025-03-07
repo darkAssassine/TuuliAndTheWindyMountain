@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b856qriuxobi7"
+path="res://.godot/imported/FOL_WIND_SFX (1).mp3-aea0a11fbcc9601876a6eeaa002acaf3.mp3str"
+
+[deps]
+
+source_file="res://game_feature/sound/wind_sound/FOL_WIND_SFX (1).mp3"
+dest_files=["res://.godot/imported/FOL_WIND_SFX (1).mp3-aea0a11fbcc9601876a6eeaa002acaf3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

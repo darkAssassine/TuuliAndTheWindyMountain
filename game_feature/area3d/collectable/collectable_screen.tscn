@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://ualslru6hkx8"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/collectable/collectable_screen.gd" id="1_x6pc5"]
+[ext_resource type="Texture2D" uid="uid://bjt03ekr2esnp" path="res://game_feature/area3d/collectable/Collectible VFX/base_sprite.png" id="2_r8km4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckbcj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r8km4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2mqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r8km4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73dqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r8km4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CollectableScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6pc5")
+
+[node name="Left" type="AnimatedSprite2D" parent="."]
+position = Vector2(1567.75, 116.85)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ckbcj")
+
+[node name="Mid" type="AnimatedSprite2D" parent="."]
+position = Vector2(1667.75, 116.85)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_f2mqg")
+
+[node name="Right" type="AnimatedSprite2D" parent="."]
+position = Vector2(1767.75, 116.85)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_73dqg")

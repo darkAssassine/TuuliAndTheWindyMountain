@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://11tau2scfpko"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/wind/wind.gd" id="1_3o8qh"]
+[ext_resource type="AudioStream" uid="uid://cwtb2oy7rlma0" path="res://game_feature/sound/wind_sound/FOL_EINZELNDE-WINDE_SFX.mp3" id="2_157g8"]
+
+[node name="Wind" type="Area3D"]
+script = ExtResource("1_3o8qh")
+direction = "up"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_157g8")
+autoplay = true
+max_distance = 20.0
+
+[connection signal="area_entered" from="." to="." method="area_entered"]
+[connection signal="area_exited" from="." to="." method="area_exited"]
+[connection signal="body_entered" from="." to="." method="_wind_entered"]
+[connection signal="body_exited" from="." to="." method="_wind_exited"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

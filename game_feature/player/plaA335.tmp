@@ -1,0 +1,341 @@
+[gd_scene load_steps=28 format=3 uid="uid://bunqvetaxawis"]
+
+[ext_resource type="Script" path="res://game_feature/player/player.gd" id="1_bqjyp"]
+[ext_resource type="Texture2D" uid="uid://cbusisabtldnd" path="res://game_feature/player/player_assets/character/character.png" id="2_fdjrf"]
+[ext_resource type="Texture2D" uid="uid://cj8ks7qqq5f3b" path="res://game_feature/player/player_assets/character/jump(newnewnew)/6.png" id="2_gh5k1"]
+[ext_resource type="Texture2D" uid="uid://1on75lfwlm8n" path="res://game_feature/player/player_assets/character/jump(newnewnew)/1.png" id="2_hbg1q"]
+[ext_resource type="Texture2D" uid="uid://cfgh7ak7tpk8o" path="res://game_feature/player/player_assets/character/jump(newnewnew)/7.png" id="3_3ll4o"]
+[ext_resource type="Texture2D" uid="uid://bxmguis7kgh88" path="res://game_feature/player/player_assets/character/jump(newnewnew)/2.png" id="3_46tte"]
+[ext_resource type="Texture2D" uid="uid://cvrrf60o1444w" path="res://game_feature/player/player_assets/umbrella/umbrella.png" id="3_lxphu"]
+[ext_resource type="AudioStream" uid="uid://dok022oq7norw" path="res://game_feature/sound/FOL_PLAYER_WALK_01.mp3" id="4_6l1gl"]
+[ext_resource type="Texture2D" uid="uid://bkfrs31qheyx7" path="res://game_feature/player/player_assets/character/jump(newnewnew)/8.png" id="4_f368j"]
+[ext_resource type="Texture2D" uid="uid://i5peau1sl6w0" path="res://game_feature/player/player_assets/character/fall(faster)/fall1.png" id="4_mgvv0"]
+[ext_resource type="Texture2D" uid="uid://ca3q554x0xnak" path="res://game_feature/player/player_assets/character/jump(newnewnew)/3.png" id="4_mkgk0"]
+[ext_resource type="Texture2D" uid="uid://b31pqlklvj8qi" path="res://game_feature/player/player_assets/character/fall(faster)/fall2.png" id="5_ib4kn"]
+[ext_resource type="AudioStream" uid="uid://7pam2tyws6vk" path="res://game_feature/sound/FOL_PLAYER_DASH_02 (1).mp3" id="5_ipgai"]
+[ext_resource type="Texture2D" uid="uid://cwmrl21ba7tma" path="res://game_feature/player/player_assets/character/jump(newnewnew)/4.png" id="5_o6ojo"]
+[ext_resource type="Texture2D" uid="uid://c2i06sgns32j0" path="res://game_feature/player/player_assets/character/jump(newnewnew)/5.png" id="6_n8ngo"]
+[ext_resource type="Texture2D" uid="uid://b54jk87gu866r" path="res://game_feature/player/player_assets/character/fall(faster)/fall3.png" id="6_x14mr"]
+[ext_resource type="Texture2D" uid="uid://ccoslovyallry" path="res://game_feature/player/player_assets/character/jump(newnewnew)/10.png" id="6_xrghy"]
+[ext_resource type="Texture2D" uid="uid://choa3nu6roxua" path="res://game_feature/player/player_assets/character/0.5.png" id="7_jkfgl"]
+
+[sub_resource type="Animation" id="Animation_88kqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6h4im"]
+resource_name = "fall"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_wja64"]
+resource_name = "fall_ended"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall_ended"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_s5lui"]
+resource_name = "fall_idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall_idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_pqipk"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20vof"]
+_data = {
+"RESET": SubResource("Animation_88kqx"),
+"fall": SubResource("Animation_6h4im"),
+"fall_ended": SubResource("Animation_wja64"),
+"fall_idle": SubResource("Animation_s5lui"),
+"jump": SubResource("Animation_pqipk")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcjff"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xrghy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jkfgl")
+}],
+"loop": true,
+"name": &"fall_ended",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mgvv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ib4kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x14mr")
+}],
+"loop": true,
+"name": &"fall_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hbg1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_46tte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mkgk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o6ojo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n8ngo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gh5k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3ll4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f368j")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fdjrf")
+}],
+"loop": true,
+"name": &"sprite",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3lra"]
+size = Vector3(0.801414, 1.86597, 0.422024)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03w5w"]
+size = Vector3(0.688011, 1.86597, 0.270948)
+
+[node name="Player" type="CharacterBody3D"]
+process_mode = 1
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_bqjyp")
+jump_strenght = 10
+dash_speed = 20.0
+wind_dampening = 150.0
+original_jump_buffer_time = 0.3
+sprite_offset_x = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_20vof")
+}
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.003
+sprite_frames = SubResource("SpriteFrames_qcjff")
+animation = &"jump"
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HitBox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.419074, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024044, 0.269084, -0.0243397)
+shape = SubResource("BoxShape3D_l3lra")
+
+[node name="Umbrella" type="Marker3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90897, 0.0175691, -0.00115108)
+pixel_size = 0.001
+texture = ExtResource("3_lxphu")
+
+[node name="BSpawn" type="Node3D" parent="Umbrella/Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134536, -0.0175691, 0.00115108)
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6l1gl")
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ipgai")
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="FrezzeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00933452, -0.151934, -0.0430937)
+shape = SubResource("BoxShape3D_03w5w")
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = 87.0
+offset_right = -1244.0
+offset_bottom = -873.0
+
+[connection signal="timeout" from="DashTimer" to="." method="dash_ended"]
+[connection signal="area_entered" from="HitBox" to="." method="enemy_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="enemy_entered"]
+[connection signal="timeout" from="DashCooldown" to="." method="cooldown_ended"]
+[connection signal="timeout" from="FrezzeTimer" to="." method="_on_frezze_timer_timeout"]
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]

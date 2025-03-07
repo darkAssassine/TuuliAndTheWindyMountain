@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx1essya4pjb0"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/lock_feature/feature_lock_unlock.gd" id="1_w3lhg"]
+[ext_resource type="AudioStream" uid="uid://iqx71e35ih18" path="res://game_feature/sound/FOL_ABILITY-COLLECT_SFX_V4.mp3" id="2_a1bio"]
+
+[node name="FeatureLockUnlock" type="Area3D"]
+script = ExtResource("1_w3lhg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a1bio")
+bus = &"sfx"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="player_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

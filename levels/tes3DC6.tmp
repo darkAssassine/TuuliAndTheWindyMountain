@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://drhm8etf1v6yy"]
+
+[ext_resource type="PackedScene" uid="uid://s4ux8cnt0ssq" path="res://game_feature/enemys/ranged_enemy/ranged_enemy.tscn" id="2_35akm"]
+[ext_resource type="PackedScene" uid="uid://bunqvetaxawis" path="res://game_feature/player/player.tscn" id="3_smyqq"]
+[ext_resource type="MeshLibrary" uid="uid://g5rnv1tpstr4" path="res://enviroment/grid_library/test_0.tres" id="4_klo00"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a4741"]
+
+[node name="Level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00944686, 5.7044, 8.39538)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh_library = ExtResource("4_klo00")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -65547, 0, 0, -65548, 0, 0, -11, 0, 0, 65525, 0, 0, 131061, 0, 0, 196597, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0)
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06082, 0, 0)
+shape = SubResource("BoxShape3D_a4741")
+
+[node name="RangedEnemy" parent="." instance=ExtResource("2_35akm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.812, -0.259, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_smyqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.198, 0.173, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11314, 0.451896, 10.2823)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

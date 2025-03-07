@@ -1,0 +1,174 @@
+[gd_scene load_steps=21 format=3 uid="uid://bmtaj0p36crji"]
+
+[ext_resource type="Script" path="res://game/main_game/game.gd" id="1_u6vou"]
+[ext_resource type="Script" path="res://game/main_game/level_manager.gd" id="2_x1pkd"]
+[ext_resource type="PackedScene" uid="uid://ewufqvjdedlk" path="res://levels/Game_Levels/Level_1.tscn" id="3_2upk6"]
+[ext_resource type="Script" path="res://game/main_game/menus_manager.gd" id="4_sad82"]
+[ext_resource type="PackedScene" uid="uid://cqbcgcl6bid21" path="res://game/game_over_screen/game_over.tscn" id="7_t26dv"]
+[ext_resource type="PackedScene" uid="uid://ot3sxf467gag" path="res://game/start_menu/start_menu.tscn" id="8_uptro"]
+[ext_resource type="PackedScene" uid="uid://bunqvetaxawis" path="res://game_feature/player/player.tscn" id="9_0tqnd"]
+[ext_resource type="PackedScene" uid="uid://dst3jhia2ksxk" path="res://game/credits/credits.tscn" id="9_cr8sk"]
+[ext_resource type="PackedScene" uid="uid://dk52uukyhw551" path="res://game/setting_menu/setting_menu.tscn" id="9_hb38u"]
+[ext_resource type="PackedScene" uid="uid://dtp6tu878rwvo" path="res://game/pause_menu/pause_menu.tscn" id="10_qr4bu"]
+[ext_resource type="PackedScene" uid="uid://b17n7p23akth6" path="res://game_feature/area3d/wind/particle_system_test/wind particle effect.tscn" id="12_o36co"]
+[ext_resource type="PackedScene" uid="uid://cdiu2rg7p67cd" path="res://game/world_environment.tscn" id="12_qux6e"]
+[ext_resource type="PackedScene" uid="uid://b7yafyxlcgy0m" path="res://game_feature/sound/audio_stream_player.tscn" id="12_xpwl6"]
+[ext_resource type="AudioStream" uid="uid://bbmlfp635i0ch" path="res://game_feature/sound/music/Umbrella Theme cut.mp3" id="13_8fipe"]
+[ext_resource type="PackedScene" uid="uid://qnwv77h8uyn3" path="res://game/UI/FPS_counter/fps_counter.tscn" id="14_4vt7l"]
+[ext_resource type="AudioStream" uid="uid://bu018rcrvhpl" path="res://game_feature/sound/music/Umbrella theme cut 2.mp3" id="14_abtv3"]
+[ext_resource type="AudioStream" uid="uid://b856qriuxobi7" path="res://game_feature/sound/wind_sound/FOL_WIND_SFX (1).mp3" id="18_5jl2f"]
+[ext_resource type="Script" path="res://game/main_game/AudioStreamPlayer2.gd" id="19_y2b14"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an71j"]
+
+[sub_resource type="Environment" id="Environment_adyks"]
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+glow_levels/2 = 3.35
+glow_strength = 0.6
+glow_hdr_scale = 0.65
+fog_enabled = true
+fog_light_color = Color(0.756863, 0.831373, 0.913725, 1)
+fog_density = 0.02
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.1
+adjustment_saturation = 1.2
+
+[node name="Game" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_u6vou")
+
+[node name="Levels" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+process_mode = 3
+script = ExtResource("2_x1pkd")
+player = NodePath("../Player")
+
+[node name="Timer" type="Timer" parent="Levels"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Level_1" parent="Levels" instance=ExtResource("3_2upk6")]
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1169.0
+script = ExtResource("4_sad82")
+
+[node name="GameOverScreen" parent="Screens" instance=ExtResource("7_t26dv")]
+process_mode = 3
+layout_mode = 1
+
+[node name="StartMenu" parent="Screens" instance=ExtResource("8_uptro")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Settings" parent="Screens" instance=ExtResource("9_hb38u")]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.997
+offset_right = 19.0
+offset_bottom = 0.506958
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PauseMenu" parent="Screens" instance=ExtResource("10_qr4bu")]
+layout_mode = 1
+
+[node name="Credits" parent="Screens" instance=ExtResource("9_cr8sk")]
+layout_mode = 1
+
+[node name="Label" parent="Screens/Credits" index="2"]
+offset_left = -192.0
+offset_top = -26.0
+offset_right = 336.0
+offset_bottom = 5240.0
+
+[node name="Player" parent="." instance=ExtResource("9_0tqnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231506, 19.9236, 0)
+dash_cooldwon = 1.0
+gravity_multiplier = 2.0
+floating_speed = 3.0
+wind_dampening = 250.0
+cojote_time = 0.2
+original_jump_buffer_time = 0.2
+
+[node name="Area3D" type="Area3D" parent="Player"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+shape = SubResource("BoxShape3D_an71j")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.218865, -0.937874, -0.269239, 0.885247, 0.0747978, 0.459067, -0.410408, -0.338817, 0.846622, -1.11539, 2.26908, 185.767)
+light_color = Color(0.996078, 0.831373, 0.713726, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+shadow_normal_bias = 6.611
+shadow_opacity = 0.42
+shadow_blur = 0.88
+
+[node name="WindParticle" parent="Environment" instance=ExtResource("12_o36co")]
+transform = Transform3D(0.9693, -0.245883, 0, 0.245883, 0.9693, 0, 0, 0, 1, 366.643, 246.613, -0.515442)
+amount = 20000
+lifetime = 40.0
+collision_base_size = 0.0
+visibility_aabb = AABB(-1345.76, -1063.6, -4.22945, 2691.52, 2127.21, 8.4589)
+
+[node name="WorldEnvironment" parent="Environment" instance=ExtResource("12_qux6e")]
+environment = SubResource("Environment_adyks")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("12_xpwl6")]
+volume_db = -4.674
+current_song = ExtResource("13_8fipe")
+song_c = ExtResource("14_abtv3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="FPS_counter" parent="UI" instance=ExtResource("14_4vt7l")]
+visible = false
+anchor_left = 0.012
+anchor_top = 0.02
+anchor_right = 0.047
+anchor_bottom = 0.065
+offset_left = -12.04
+offset_top = -10.6
+offset_right = -40.24
+offset_bottom = -17.2
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_5jl2f")
+volume_db = -15.0
+bus = &"sfx"
+script = ExtResource("19_y2b14")
+
+[connection signal="respawn" from="." to="Player" method="respawn"]
+[connection signal="timeout" from="Levels/Timer" to="Levels" method="_on_timer_timeout"]
+[connection signal="go_to_credits" from="Screens/StartMenu" to="Screens/Credits" method="show_credits"]
+[connection signal="go_to_settings" from="Screens/StartMenu" to="Screens/Settings" method="_on_pause_menu_go_to_settings"]
+[connection signal="is_in_game" from="Screens/StartMenu" to="Screens" method="set_out_main"]
+[connection signal="to_previous_menu" from="Screens/Settings" to="Screens" method="load_previous_screen"]
+[connection signal="go_to_settings" from="Screens/PauseMenu" to="Screens/Settings" method="_on_pause_menu_go_to_settings"]
+[connection signal="player_respawn" from="Screens/PauseMenu" to="Player" method="respawn"]
+[connection signal="reload" from="Screens/PauseMenu" to="Levels" method="load_next_level"]
+[connection signal="show_main_menu" from="Screens/PauseMenu" to="Screens" method="set_in_main"]
+[connection signal="show_main_menu" from="Screens/PauseMenu" to="Screens" method="show_main_menu"]
+[connection signal="back_to_previous" from="Screens/Credits" to="Screens" method="show_main_menu"]
+[connection signal="restart_game" from="Screens/Credits" to="Levels" method="reset_game"]
+[connection signal="restart_game" from="Screens/Credits" to="Screens" method="show_main_menu"]
+[connection signal="animation_finished" from="Screens/Credits/AnimationPlayer" to="." method="anim_finished"]
+[connection signal="player_died" from="Player" to="." method="player_died"]
+[connection signal="player_died" from="Player" to="Levels" method="_on_player_player_died"]
+[connection signal="area_entered" from="Player/Area3D" to="AudioStreamPlayer" method="change_song"]
+[connection signal="finished" from="AudioStreamPlayer2" to="AudioStreamPlayer2" method="_on_finished"]
+
+[editable path="Screens/Credits"]

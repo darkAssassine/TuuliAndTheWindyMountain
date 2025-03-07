@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://b17n7p23akth6"]
+
+[ext_resource type="Shader" path="res://game_feature/area3d/wind/particle_system_test/wind particle effect.gdshader" id="1_84g8t"]
+[ext_resource type="ArrayMesh" uid="uid://8op4axbg0vut" path="res://game_feature/area3d/wind/particle_system_test/snowflake with gradient.obj" id="2_wv1am"]
+[ext_resource type="Script" path="res://game_feature/area3d/wind/particle_system_test/particle_effect.gd" id="3_duo1j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6rlx"]
+render_priority = 2
+shader = ExtResource("1_84g8t")
+
+[sub_resource type="Gradient" id="Gradient_b1rdg"]
+offsets = PackedFloat32Array(0, 0.0598291, 0.228632, 1)
+colors = PackedColorArray(0.240185, 0.597926, 0.956338, 1, 0.0881152, 0.609546, 0.816155, 1, 5.39064e-06, 0.689012, 0.929757, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3snhk"]
+gradient = SubResource("Gradient_b1rdg")
+fill_to = Vector2(0.653846, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfhtr"]
+albedo_texture = SubResource("GradientTexture2D_3snhk")
+metallic = 1.0
+roughness = 0.76
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ftqml"]
+emission_shape_scale = Vector3(100, 0.6, 1)
+emission_shape = 1
+emission_sphere_radius = 15.26
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.0
+scale_max = 0.7
+turbulence_enabled = true
+turbulence_noise_scale = 0.438
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Skin" id="Skin_utj08"]
+
+[node name="WindParticle" type="GPUParticles3D"]
+material_override = SubResource("ShaderMaterial_n6rlx")
+material_overlay = SubResource("StandardMaterial3D_pfhtr")
+cast_shadow = 0
+amount = 8000
+lifetime = 11.81
+speed_scale = 3.0
+collision_base_size = 28.25
+visibility_aabb = AABB(-10.642, -51.7781, -4.22945, 21.2839, 103.556, 8.4589)
+local_coords = true
+trail_enabled = true
+trail_lifetime = 8.55
+process_material = SubResource("ParticleProcessMaterial_ftqml")
+draw_pass_1 = ExtResource("2_wv1am")
+draw_skin = SubResource("Skin_utj08")
+script = ExtResource("3_duo1j")

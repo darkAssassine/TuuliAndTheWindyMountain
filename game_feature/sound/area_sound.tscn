@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://3u5x7auw6r6y"]
+
+[ext_resource type="Script" path="res://game_feature/sound/area_sound.gd" id="1_c206a"]
+
+[node name="AreaSound" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_c206a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+volume_db = -16.0
+unit_size = 33.14
+max_distance = 58.51
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

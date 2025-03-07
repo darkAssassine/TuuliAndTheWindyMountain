@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://daca1m5a4kjrv"]
+
+[ext_resource type="Script" path="res://game_feature/area3d/plattfroms/moving_platform/moving_platform.gd" id="1_iecgp"]
+[ext_resource type="MeshLibrary" uid="uid://p61e76bffd32" path="res://enviroment/grid_library/hopefullly_final_tileset.tres" id="2_e6hx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pao0o"]
+size = Vector3(4.0307, 1.28729, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vs3qr"]
+size = Vector3(4.10159, 1, 1)
+
+[node name="Platform" type="PathFollow3D"]
+rotation_mode = 0
+script = ExtResource("1_iecgp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00369596, 0.66975, 0.498456)
+shape = SubResource("BoxShape3D_pao0o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00108337, 0.532442, 0.490385)
+shape = SubResource("BoxShape3D_vs3qr")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_e6hx0")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 0, 6, 0, 0, 6, 1, 0, 6, 65534, 0, 6)
+}
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="player_entered"]
+[connection signal="body_exited" from="StaticBody3D/Area3D" to="." method="player_exited"]

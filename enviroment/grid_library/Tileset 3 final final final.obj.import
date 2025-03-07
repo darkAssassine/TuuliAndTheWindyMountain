@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5f8ygg1ol5sv"
+path="res://.godot/imported/Tileset 3 final final final.obj-256e036a2013311e5dedb6f93898293d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tileset 3 final final final.obj-256e036a2013311e5dedb6f93898293d.mesh"]
+
+source_file="res://enviroment/grid_library/Tileset 3 final final final.obj"
+dest_files=["res://.godot/imported/Tileset 3 final final final.obj-256e036a2013311e5dedb6f93898293d.mesh", "res://.godot/imported/Tileset 3 final final final.obj-256e036a2013311e5dedb6f93898293d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
