@@ -17,7 +17,7 @@ Susa Steinmetz
 Vivian Baehnisch
 
 3D Art:
-Tim Ritter
+Tim Ritter,
 Lennart Schultz
 
 Producer:
@@ -27,6 +27,6 @@ Game Designer:
 Ilias Christovassilis
 
 Engineer / Programmer:
-Benjamin Köcher
+Benjamin Köcher(myself)
 
 
