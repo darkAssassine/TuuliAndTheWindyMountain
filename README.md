@@ -8,5 +8,25 @@ Tuli and the Windy Mountain was my first-semester project at the S4G School for 
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay0.gif" width="500px" align="center">
 
-<img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay1.gif" width="500px" align="left">
+<img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay1.gif" width="500px" align="center">
+
+Art-Direction:
+Susa Steinmetz
+
+2D Art:
+Vivian Baehnisch
+
+3D Art:
+Tim Ritter
+Lennart Schultz
+
+Producer:
+Martin Kruse
+
+Game Designer:
+Ilias Christovassilis
+
+Engineer / Programmer:
+Benjamin Köcher
+
 
