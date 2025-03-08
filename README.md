@@ -1,6 +1,6 @@
 # Tuuli and the Windy Mountain
 
-**Tuuli and the Windy Mountain** was my first-semester project at S4G School for Games, developed using the **Godot Engine**. It was the first major project I worked on, and I was the **sole programmer** on a team of seven. The development time was **10 weeks**, and while the code structure is unpolished, I am showcasing it as a testament to my learning curve over the years.
+**Tuuli and the Windy Mountain** was my first-semester project at S4G School for Games, developed using the **Godot Engine**. It was the first major project I worked on, and I had just started learning how to **program**. I was the **sole programmer** on a team of seven. The development time was **10 weeks**, and while the code structure is unpolished, I am showcasing it as a testament to my learning curve over the years.
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/d8b67f8b43dcdcf2b2cbc993a076084d67979aa5/assets/img/TuulyAndTheWinidyMountainMain.png" width="500px" align="center">
 
@@ -13,11 +13,11 @@
 
 This is a **2D platformer with 3D art**, where you play as a young girl equipped with a **magical umbrella** that allows her to **glide on the wind** and navigate through levels. The game features:
 
-- **Feel-good movement mechanics**
+- **Responsive and satisfying movement mechanics**
 - **Two enemy types**
 - **Handcrafted levels**
-- **Unique visual style combining 2D and 3D assets**
-- **Speechboxes**
+- **A unique visual style combining 2D and 3D assets**
+- **A dialogue system with speech boxes**
 
 ## What I Learned
 
