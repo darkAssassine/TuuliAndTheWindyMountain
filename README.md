@@ -2,14 +2,13 @@
 
 **Tuuli and the Windy Mountain** was my first-semester project at S4G School for Games, developed using the **Godot Engine**. It was the first major project I worked on, and I had just started learning how to **program**. I was the **sole programmer** on a team of seven. The development time was **10 weeks**, and while the code structure is unpolished, I am showcasing it as a testament to my learning curve over the years.
 
+## About the Game
+
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/d8b67f8b43dcdcf2b2cbc993a076084d67979aa5/assets/img/TuulyAndTheWinidyMountainMain.png" width="500px" align="center">
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay0.gif" width="500px" align="center">
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay1.gif" width="500px" align="center">
-
-
-## About the Game
 
 This is a **2D platformer with 3D art**, where you play as a young girl equipped with a **magical umbrella** that allows her to **glide on the wind** and navigate through levels. The game features:
 
