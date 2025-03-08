@@ -30,7 +30,7 @@ Working on this project provided valuable insights into:
 
 ## Team Members
 
-- **Benjamin Köcher** *(Programming - Everything)*
+- **Benjamin Köcher** *(Programming)*
 - **Martin Kruse** *(Project Management)*
 - **Tim Ritter** *(3D Models & Tileset)*
 - **Lennart Schultz** *(3D Animation, Tileset & Models)*
