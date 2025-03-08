@@ -4,7 +4,7 @@ Note: I have been the sole programmer on all the projects I have worked on so fa
 
 Tuli and the Windy Mountain was my first-semester project at the S4G School for Games. It was developed using the Godot engine with GScript. The game is a platformer featuring two types of enemies, a basic feel-good movement system, an umbrella mechanic, and speech boxes for dialogue.
 
-![MainImage](/assets/img/TuuliAndTheWinidyMountainMain.png)
+![MainImage](assets/img/TuulyAndTheWinidyMountainMain.png)
 
 ![MainImage](/assets/img/TuuliAndTheWindyMountainGameplay0.gif)
 
