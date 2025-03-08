@@ -6,7 +6,7 @@ Tuli and the Windy Mountain was my first-semester project at the S4G School for 
 
 ![MainImage](assets/img/TuulyAndTheWinidyMountainMain.png)
 
-![MainImage](/assets/img/TuuliAndTheWindyMountainGameplay0.gif)
+![MainImage](assets/img/TuuliAndTheWindyMountainGameplay0.gif)
 
-![MainImage](/assets/img/TuuliAndTheWindyMountainGameplay1.gif)
+![MainImage](assets/img/TuuliAndTheWindyMountainGameplay1.gif)
 
