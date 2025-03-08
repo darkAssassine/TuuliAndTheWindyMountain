@@ -6,7 +6,7 @@ Tuli and the Windy Mountain was my first-semester project at the S4G School for 
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/d8b67f8b43dcdcf2b2cbc993a076084d67979aa5/assets/img/TuulyAndTheWinidyMountainMain.png" width="385px" align="center">
 
-![MainImage](assets/img/TuuliAndTheWindyMountainGameplay0.gif)
+<img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay0.gif" width="385px" align="center">
 
-![MainImage](assets/img/TuuliAndTheWindyMountainGameplay1.gif)
+<img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay1.gif" width="385px" align="center">
 
