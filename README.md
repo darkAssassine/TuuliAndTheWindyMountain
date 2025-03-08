@@ -1,6 +1,6 @@
 ## Tuli and the windy Mountain
 
-Note: I have been the sole programmer on all the projects I have worked on so far.
+Note: I was the sole programmer for this project.
 
 Tuli and the Windy Mountain was my first-semester project at the S4G School for Games. It was developed using the Godot engine with GScript. The game is a platformer featuring two types of enemies, a basic feel-good movement system, an umbrella mechanic, and speech boxes for dialogue.
 
@@ -10,23 +10,5 @@ Tuli and the Windy Mountain was my first-semester project at the S4G School for 
 
 <img src="https://github.com/darkAssassine/TuuliAndTheWindyMountain/blob/9221035b220064860f700a05344025a3a55eb2f6/assets/img/TuuliAndTheWindyMountainGameplay1.gif" width="500px" align="center">
 
-Art-Direction:
-Susa Steinmetz
-
-2D Art:
-Vivian Baehnisch
-
-3D Art:
-Tim Ritter,
-Lennart Schultz
-
-Producer:
-Martin Kruse
-
-Game Designer:
-Ilias Christovassilis
-
-Engineer / Programmer:
-Benjamin Köcher(myself)
 
 
